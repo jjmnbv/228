@@ -1,0 +1,88 @@
+    <script type="text/javascript">
+        $(function () {
+            window.myLayout = $(document.body).layout({   //borderlayout
+                defaults: {},
+                north: {
+                    size: 51,
+                    closable: true,
+                    resizable: false,
+                    spacing_open: 0,
+                    togglerLength_closed: 0,
+                    onopen_end: function () {
+                        $("#north-toggler").hide();
+                    },
+                    onclose_end: function () {
+                        $("#north-toggler").show();
+                    }
+                },
+                west: {
+                    size: 138,
+                    spacing_closed: 10,
+                    spacing_open: 10,
+                    togglerLength_open: "100%",
+                    togglerLength_closed: "100%",
+                    togglerTip_open: "收起菜单,快捷键Ctrl+←",
+                    togglerTip_closed: "展开菜单,快捷键Ctrl+←"
+                }
+            });
+
+            jQuery("#togglenorth").click(function () {
+                myLayout.toggle("north");
+            });
+
+            jQuery("#north-toggler").click(function () {
+                myLayout.toggle("north");
+                jQuery(this).hide();
+            });
+
+            function applyMenuItems() {
+                jQuery("#submenu .mitems").hide();
+                // 选中第一个子菜单
+                jQuery("#" + jQuery("#modules .active").attr("id") + "items")
+						.slideDown("fast").children("li:first").click();
+            }
+            applyMenuItems();
+            // 子模块点击动作
+            jQuery("#modules > li").not('.iiconmenuIcon_logo').click(function () {
+                jQuery("#modules .piconclick").removeClass("piconclick");
+                jQuery("#modules .active").removeClass("active");
+                jQuery(this).addClass("piconclick");
+            });
+            // 防止超练级虚框
+            jQuery("a").click(function () {
+                this.blur();
+            });
+            // 子菜单点击
+            jQuery("#submenu li").click(function () {
+                jQuery("#submenu .subactive").removeClass("subactive");
+                jQuery(this).removeClass("subhover").addClass("subactive");
+            }).hover(function () {
+                jQuery(this).addClass("subhover");
+            }, function () {
+                jQuery(this).removeClass("subhover");
+            });
+        });
+    </script>
+
+    <div class="ui-layout-north">
+        <a href="javascript:void(0)" id="hdlogo" class="pngfix"></a>
+        <div class="department">
+            <span>欢迎您:OCRS-后台管理员-王家麒</span>
+
+        </div>
+       
+    </div>
+    <div class="ui-layout-west" id="left">
+        <!-- 模块  -->
+        <ul id="modules">
+            <li id="m0" class="active"><a href="index.jsp" target="mainframe"
+                class="iiconmenuIcon_0"><span>&nbsp;&nbsp;首&nbsp;页</span></a></li>
+            <li id="m1"><a href="example" target="mainframe" class="iiconmenuIcon_2"><span>&nbsp;&nbsp;示例</span></a></li>
+
+        </ul>
+    </div>
+    <div class="ui-layout-center" id="ui-layout-center" style="overflow: hidden;">
+        <iframe style="width: 100%; height: 100%;" frameborder="0" allowtransparency="true"
+            src="modules/homePage.html" id="mainframe" name="mainframe"></iframe>
+    </div>
+

@@ -1,0 +1,664 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>马尔代夫</title>
+    <meta name="description" content="北京青年旅行社马尔代夫"/>
+    <style type="text/css">
+    </style>
+
+    <!-- image css -->
+    <link type="text/css" rel="stylesheet" href="#springUrl('')/static/css/style.css"/>
+
+    <!-- common js -->
+    <script type="text/javascript" src="#springUrl('')/static/js/jquery-1.7.2.min.js"></script>
+    <!-- advbox -->
+    <script type="text/javascript" src="#springUrl('')/static/js/advbox.js"></script>
+    <!-- image nav -->
+    <script type="text/javascript" src="#springUrl('')/static/js/imagenav.js"></script>
+    <!-- 1 left content -->
+    <script type="text/javascript" src="#springUrl('')/static/js/list.js"></script>
+    <!-- top10 -->
+    <script type="text/javascript" src="#springUrl('')/static/js/top10.js"></script>
+    <script type="text/javascript" src="#springUrl('')/static/js/lazyload.js"></script>
+    <!-- brand -->
+    <script type="text/javascript" src="#springUrl('')/static/js/brand.js"></script>
+    <!-- 3 content -->
+    <script type="text/javascript" src="#springUrl('')/static/js/jquery.coverscroll.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+
+            //navSlider
+            function navSlider(){
+                var nav = $('.nav')
+                var   cur = $('.nav li.cur a')
+                var   navLine = $('.nav-line')
+                var   anchor = $('a',nav.children())
+                var curPosL = cur.position().left
+                var curW = cur.outerWidth(true)
+                var curIdx = $('li.cur',$nav).index()
+                    navLine.css({'width':curW,'left':curPosL});
+                   anchor.each(function(index){
+                var posL = $(this).position().left
+                var w = $(this).outerWidth(true)
+                    $(this).mouseenter(function(){
+                    navLine.animate({'width':w,'left':posL},250);
+                    $(this).parent().addClass('cur').siblings().removeClass('cur');
+                });
+                });
+                /* 去掉last */
+
+                    nav.mouseleave(function(){
+                    navLine.animate({'width':curW,'left':curPosL},250);
+                    anchor.parent(':eq('+curIdx+')').addClass('cur').siblings().removeClass('cur');
+                });
+            };
+            //广告
+            AdvClick();
+            //顶部通览可展开收起效果
+            if ($("#actionimg").length > 0) {
+                $("#actionimg").onload = AdvAuto();
+            }
+
+            //imagenav
+            imagenav();
+
+            //nav效果
+            navSlider();
+
+            //TOP10
+            $("img[original]").lazyload({ placeholder: "http://www.jsfoot.com/skinnew/images/color3.gif" });//第一次加载使用
+            TabHeads("#topic01 dt", "on", "#topic01 dd");
+
+            //hotels brands
+            allBrandAnimate($('.allbrand'), 80);
+
+            //imagescroll
+            $('#imagescroll').coverscroll();
+
+        });
+
+
+    </script>
+
+</head>
+<body>
+<div id="body">
+<!-- top start -->
+<div id="top">
+    <!-- advbox start -->
+    <div class="advbox">
+        <div class="dt_small" style="display:none;">
+            <div class="dt_toBig" style="display:none;"></div>
+            <a href="http://www.jsfoot.com/" target="_blank"><img src="#springUrl('')/static/images/1325.jpg"
+                                                                  width="990" height="60" alt="jquery广告图片缩略图"/></a>
+        </div>
+        <div class="dt_big">
+            <div class="dt_toSmall"></div>
+            <a href="http://www.jsfoot.com/" target="_blank"><img id="actionimg"
+                                                                  src="#springUrl('')/static/images/sa11.jpg"
+                                                                  width="990" height="500" alt="jquery广告图片大图"/></a>
+        </div>
+    </div>
+    <!-- advbox end -->
+    <!-- logo start -->
+    <div style="text-align:left;float:left;">
+        <a href="http://www.iutour.cn/">
+            <img src="#springUrl('')/static/images/logo.jpg" style="height:100px;" alt="北京青年旅行社"/>
+        </a>
+    </div>
+    <!-- logo end -->
+    <!-- nav start -->
+    <div class="nav">
+        <ul>
+            <li class="cur"><a href="http://www.jsfoot.com/">首 页</a></li>
+            <li><a href="http://www.jsfoot.com/jquery/">线路产品</a></li>
+            <li><a href="http://www.jsfoot.com/js/">图片墙</a></li>
+            <li><a href="http://www.jsfoot.com/js/">马代杂记</a></li>
+            <!-- 去掉last -->
+            <!--<li class="last"><a href="http://www.jsfoot.com/">返回</a></li>-->
+        </ul>
+        <div class="nav-line"></div>
+    </div>
+    <div class="clear"></div>
+    <!-- nav end -->
+    <div style="height:2px;"></div>
+    <!-- image nav start -->
+    <div class="wrapper">
+        <div id="focus">
+            <ul>
+                <li><a href="http://www.jsfoot.com/" target="_blank"><img src="#springUrl('')/static/images/top_1.jpg"
+                                                                          alt="QQ商城焦点图效果下载"/></a></li>
+                <li><a href="http://www.jsfoot.com/" target="_blank"><img src="#springUrl('')/static/images/top_2.jpg"
+                                                                          alt="QQ商城焦点图效果教程"/></a></li>
+                <li><a href="http://www.jsfoot.com/" target="_blank"><img src="#springUrl('')/static/images/top_3.jpg"
+                                                                          alt="jquery商城焦点图效果"/></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- image nav end -->
+</div>
+<!-- top end -->
+
+<!-- content start -->
+<div id="content">
+<!-- hot product start -->
+<div id="hotproduct" style="margin:0 0 10px 0;border: 1px solid #EDEDED;background:#FCFCFC;">
+    <div class="tit">
+        <h2>热门线路</h2>
+    </div>
+    <div class="clear"></div>
+    <div style="width:372px;float:left;">
+        <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
+            <img alt="大图" width="360" height="264" src="#springUrl('')/static/images/beiqing_1.jpg"/></a>
+    </div>
+
+    <div style="width:416px;float:right;text-align:left;padding:5px;">
+					<span>
+						<h1><a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">美露丽芙岛</a></h1>
+						<div><a href="http://www.jsfoot.com/" target="_blank">热度&gt;&gt;</a>:★★★★★</div>
+						<div><a href="http://www.jsfoot.com/" target="_blank">评分&gt;&gt;</a>:★★★★★</div>
+						<div><a href="http://www.jsfoot.com/" target="_blank">酒店&gt;&gt;</a>:Vilu Reef Beach & Spa
+                            Resort
+                        </div>
+						<div><a href="http://www.jsfoot.com/" target="_blank">酒店等级&gt;&gt;</a>:五星</div>
+						<div><a href="http://www.jsfoot.com/" target="_blank">剩余房间&gt;&gt;</a>:98个房间</div>
+						<div><a href="http://www.jsfoot.com/" target="_blank">位置&gt;&gt;</a>:哈阿里夫环礁</div>
+						<span>简介： 东南亚风格的家居物品多用实木、竹、藤、麻等材料打造，比如印度尼西亚的藤、马来西亚河道里的水草以及泰国的木皮等等纯天然的材质。 这些材质会使居室显得自然古朴，彷佛沐浴着阳光雨露般舒畅。正所谓其崇尚自然、原汁、原味的特点， 被越来越多的人喜爱。</span>
+					</span>
+    </div>
+    <div class="clear"></div>
+
+    <div class="subtit">
+        <h2><a href="#">其他热门线路</a></h2>
+    </div>
+    <div class="clear"></div>
+    <div>
+        <ul style="text-align:left;float:left;">
+            <li>1狄娃岛DIVA 4晚6天</li>
+            <li>2马尔代夫天堂岛Paradise Isl Resort & Spa 5★4晚6天</li>
+            <li>3马尔代夫蓝色美人蕉岛Thulhagiri4★4晚6天/5晚7天</li>
+        </ul>
+        <ul style="text-align:left;float:left;">
+            <li>4阿雅达岛Ayada4晚6天</li>
+            <li>5马尔代夫港丽伦格里岛超5★4晚6天</li>
+            <li>6马尔代夫班度士岛Bos Resort4★4晚6天</li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</div>
+<!-- hot product end -->
+
+<!-- hot island start -->
+<div id="hotisland" style="margin:0 0 10px 0;border: 1px solid #EDEDED;background:#FCFCFC;">
+    <div class="tit">
+        <h2>热门岛屿</h2>
+    </div>
+    <div class="clear"></div>
+    <div style="width:416px;float:left;text-align:left;padding:5px;">
+					<span>
+						<h1><a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">美露丽芙岛</a></h1>
+						<div><a href="http://www.jsfoot.com/" target="_blank">热度&gt;&gt;</a>:★★★★★</div>
+						<div><a href="http://www.jsfoot.com/" target="_blank">评分&gt;&gt;</a>:★★★★★</div>
+						<div><a href="http://www.jsfoot.com/" target="_blank">酒店&gt;&gt;</a>:Vilu Reef Beach & Spa
+                            Resort
+                        </div>
+						<div><a href="http://www.jsfoot.com/" target="_blank">酒店等级&gt;&gt;</a>:五星</div>
+						<div><a href="http://www.jsfoot.com/" target="_blank">剩余房间&gt;&gt;</a>:98个房间</div>
+						<div><a href="http://www.jsfoot.com/" target="_blank">位置&gt;&gt;</a>:哈阿里夫环礁</div>
+						<span>简介： 东南亚风格的家居物品多用实木、竹、藤、麻等材料打造，比如印度尼西亚的藤、马来西亚河道里的水草以及泰国的木皮等等纯天然的材质。 这些材质会使居室显得自然古朴，彷佛沐浴着阳光雨露般舒畅。正所谓其崇尚自然、原汁、原味的特点， 被越来越多的人喜爱。</span>
+					</span>
+    </div>
+
+    <div style="width:372px;float:right;">
+        <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
+            <img alt="大图" width="360" height="264" src="#springUrl('')/static/images/beiqing_4.jpg"/></a>
+    </div>
+    <div class="clear"></div>
+
+    <div class="tit">
+        <h2>其他热门岛屿</h2>
+    </div>
+    <div class="clear"></div>
+    <div>
+        <div>
+            <div style="float:left;">
+                <img alt="大图" width="186" height="136" src="#springUrl('')/static/images/beiqing_4.jpg"/></a>
+            </div>
+            <div style="float:left;">
+                <img alt="大图" width="186" height="136" src="#springUrl('')/static/images/beiqing_4.jpg"/></a>
+            </div>
+            <div style="float:left;">
+                <img alt="大图" width="186" height="136" src="#springUrl('')/static/images/beiqing_4.jpg"/></a>
+            </div>
+            <div style="float:left;">
+                <img alt="大图" width="186" height="136" src="#springUrl('')/static/images/beiqing_4.jpg"/></a>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!-- hot island end -->
+
+<!-- full price start -->
+<div id="fullprice" style="margin:0 0 10px 0;border: 1px solid #EDEDED;background:#FCFCFC;">
+    <div class="tit">
+        <h2>一价全含</h2>
+    </div>
+    <div class="clear"></div>
+    <div>
+        <div style="border-bottom:1px solid #EDEDED;">
+            <div style="float:left;">
+                <img alt="大图" width="210" height="140" src="#springUrl('')/static/images/dao_1.jpg"/></a>
+            </div>
+            <div style="float:right;text-align:left;width:530px;">
+                <ul style="list-style-type:none;position:relative;margin-left:-40px;padding:0 10px 0 10px;">
+                    <li><span style="font-size:16px;color:#39aa42;font-weight:bold;">萨芙莉岛（Safari）</span></li>
+                    <li><span style="font-size:10px;">距离机场60公里，乘水上飞机约70分钟到达。2013年全新开业，细腻粉质沙滩，赠送半天船屋游。</span></li>
+                    <li style="border-top:1px solid #EDEDED;border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>
+                        海航直飞，4泻湖</span><span style="float:right;margin-right:10px;">12243起</span></li>
+                    <li style="border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>海航直飞，4泻湖</span><span
+                            style="float:right;margin-right:10px;">12243起</span></li>
+                    <li style="border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>海航直飞，4泻湖</span><span
+                            style="float:right;margin-right:10px;">12243起</span></li>
+                    <li style="border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>海航直飞，4泻湖</span><span
+                            style="float:right;margin-right:10px;">12243起</span></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div style="border-bottom:1px solid #EDEDED;">
+            <div style="float:left;">
+                <img alt="大图" width="210" height="140" src="#springUrl('')/static/images/dao_1.jpg"/></a>
+            </div>
+            <div style="float:right;text-align:left;width:530px;">
+                <ul style="list-style-type:none;position:relative;margin-left:-40px;padding:0 10px 0 10px;">
+                    <li><span style="font-size:16px;color:#39aa42;font-weight:bold;">萨芙莉岛（Safari）</span></li>
+                    <li><span style="font-size:10px;">距离机场60公里，乘水上飞机约70分钟到达。2013年全新开业，细腻粉质沙滩，赠送半天船屋游。</span></li>
+                    <li style="border-top:1px solid #EDEDED;border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>
+                        海航直飞，4泻湖</span><span style="float:right;margin-right:10px;">12243起</span></li>
+                    <li style="border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>海航直飞，4泻湖</span><span
+                            style="float:right;margin-right:10px;">12243起</span></li>
+                    <li style="border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>海航直飞，4泻湖</span><span
+                            style="float:right;margin-right:10px;">12243起</span></li>
+                    <li style="border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>海航直飞，4泻湖</span><span
+                            style="float:right;margin-right:10px;">12243起</span></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div style="border-bottom:1px solid #EDEDED;">
+            <div style="float:left;">
+                <img alt="大图" width="210" height="140" src="#springUrl('')/static/images/dao_1.jpg"/></a>
+            </div>
+            <div style="float:right;text-align:left;width:530px;">
+                <ul style="list-style-type:none;position:relative;margin-left:-40px;padding:0 10px 0 10px;">
+                    <li><span style="font-size:16px;color:#39aa42;font-weight:bold;">萨芙莉岛（Safari）</span></li>
+                    <li><span style="font-size:10px;">距离机场60公里，乘水上飞机约70分钟到达。2013年全新开业，细腻粉质沙滩，赠送半天船屋游。</span></li>
+                    <li style="border-top:1px solid #EDEDED;border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>
+                        海航直飞，4泻湖</span><span style="float:right;margin-right:10px;">12243起</span></li>
+                    <li style="border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>海航直飞，4泻湖</span><span
+                            style="float:right;margin-right:10px;">12243起</span></li>
+                    <li style="border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>海航直飞，4泻湖</span><span
+                            style="float:right;margin-right:10px;">12243起</span></li>
+                    <li style="border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>海航直飞，4泻湖</span><span
+                            style="float:right;margin-right:10px;">12243起</span></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!-- full price end -->
+
+<!-- group product start -->
+<div id="groupproduct" style="margin:0 0 10px 0;border: 1px solid #EDEDED;background:#FCFCFC;">
+    <div class="tit">
+        <h2>马代“+”强版</h2>
+    </div>
+    <div class="clear"></div>
+    <div style="width:372px;float:left;padding:5px;">
+        <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
+            <img alt="大图" width="360" height="128" src="#springUrl('')/static/images/add1.jpg"/></a>
+        <h4>马尔代夫&nbsp;+&nbsp;香港</h4>
+        <span>1.性价比高 2.沙好水也好，环境更是美 3.可体验水飞 4.沙屋水屋兼备，特色半沙半水屋 5.特色船屋 6.特色玻璃桌面 7.新开业岛屿，设</span>
+    </div>
+    <div style="width:372px;float:right;padding:5px;">
+        <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
+            <img alt="大图" width="360" height="128" src="#springUrl('')/static/images/add2.jpg"/></a>
+        <h4>马尔代夫&nbsp;+&nbsp;迪拜</h4>
+        <span>1.性价比高 2.沙好水也好，环境更是美 3.可体验水飞 4.沙屋水屋兼备，特色半沙半水屋 5.特色船屋 6.特色玻璃桌面 7.新开业岛屿，设</span>
+    </div>
+    <div style="width:372px;float:right;padding:5px;">
+        <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
+            <img alt="大图" width="360" height="128" src="#springUrl('')/static/images/add2.jpg"/></a>
+        <h4>马尔代夫双岛游</h4>
+        <span>1.性价比高 2.沙好水也好，环境更是美 3.可体验水飞 4.沙屋水屋兼备，特色半沙半水屋 5.特色船屋 6.特色玻璃桌面 7.新开业岛屿，设</span>
+    </div>
+    <div style="width:372px;float:left;padding:5px;">
+        <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
+            <img alt="大图" width="360" height="128" src="#springUrl('')/static/images/add1.jpg"/></a>
+        <h4>马尔代夫7晚8天超长版</h4>
+        <span>1.性价比高 2.沙好水也好，环境更是美 3.可体验水飞 4.沙屋水屋兼备，特色半沙半水屋 5.特色船屋 6.特色玻璃桌面 7.新开业岛屿，设</span>
+    </div>
+    <div class="clear"></div>
+</div>
+<!-- group product end -->
+
+<!-- hot recommend start -->
+<!--
+<div id="recommend" style="margin:0 0 10px 0;border: 1px solid #EDEDED;background:#FCFCFC;">
+    <div class="tit">
+        <h2>推荐板块</h2>
+    </div>
+    <div class="clear"></div>
+    <div style="width:372px;float:left;padding:5px;">
+        <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
+        <img alt="大图" width="360" height="270" src="images/001.jpg" /></a>
+        <span>澳洲旅游</span>
+    </div>
+    <div style="width:372px;float:right;padding:5px;">
+        <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
+        <img alt="大图" width="360" height="270" src="images/002.jpg" /></a>
+        <span>海岛旅游</span>
+    </div>
+    <div style="width:372px;float:left;padding:5px;">
+        <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
+        <img alt="大图" width="360" height="270" src="images/003.jpg" /></a>
+        <span>海南旅游</span>
+    </div>
+    <div style="width:372px;float:right;padding:5px;">
+        <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
+        <img alt="大图" width="360" height="270" src="images/004.jpg" /></a>
+        <span>游轮旅游</span>
+    </div>
+    <div class="clear"></div>
+</div>
+-->
+<!-- hot recommend end -->
+
+<!-- brand start -->
+<div id="brand" style="margin:0 0 10px 0;border: 1px solid #EDEDED;background:#FCFCFC;">
+    <div class="tit">
+        <h2>酒店集团logo列表</h2>
+    </div>
+    <div class="clear"></div>
+    <div class="allbrand">
+        <div class="brand">
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="兰芝"
+                                                                  src="#springUrl('')/static/images/20121119104931.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="丝塔芙"
+                                                                  src="#springUrl('')/static/images/20121015052055.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="玉兰油"
+                                                                  src="#springUrl('')/static/images/20121123030707.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="高丝"
+                                                                  src="#springUrl('')/static/images/20121210102224.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="美宝莲"
+                                                                  src="#springUrl('')/static/images/20121220100203.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="水之密语"
+                                                                  src="#springUrl('')/static/images/20130106112242.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="曼秀雷敦"
+                                                                  src="#springUrl('')/static/images/20121220100514.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="JUST BB"
+                                                                  src="#springUrl('')/static/images/20130106112655.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="玉兰油"
+                                                                  src="#springUrl('')/static/images/20121123030707.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="美宝莲"
+                                                                  src="#springUrl('')/static/images/20121220100203.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="水之密语"
+                                                                  src="#springUrl('')/static/images/20130106112242.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="曼秀雷敦"
+                                                                  src="#springUrl('')/static/images/20121220100514.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="JUST BB"
+                                                                  src="#springUrl('')/static/images/20130106112655.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="玉兰油"
+                                                                  src="#springUrl('')/static/images/20121123030707.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="曼秀雷敦"
+                                                                  src="#springUrl('')/static/images/20121220100514.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="JUST BB"
+                                                                  src="#springUrl('')/static/images/20130106112655.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="玉兰油"
+                                                                  src="#springUrl('')/static/images/20121123030707.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="玉兰油"
+                                                                  src="#springUrl('')/static/images/20121123030707.jpg"/></a>
+        </div>
+    </div>
+</div>
+<!-- brand end -->
+</div>
+<!-- content end -->
+
+<!-- sidebar start -->
+<div id="sidebar">
+    <!-- top10 start -->
+    <div class="ranklist">
+        <div class="tit">
+            <h2>岛屿TOP 10</h2>
+        </div>
+        <ol>
+            <li class="top">
+                <em>1</em><a href="http://www.jsfoot.com/jquery/images/cj/2011-10-19/217.html"
+                             title="jquery 图片滚动 xslider 插件 按钮控制自动图片左右滚动、上下滚动">jquery </a><span class="num">32万下载</span>
+            </li>
+            <li class="top">
+                <em>2</em><a href="http://www.jsfoot.com/jquery/xxk/qh/2011-09-28/213.html"
+                             title="jquery tab选项卡插件 轻量级tab选项卡插件支持鼠标滑过、点击、自动切换、数据回调等功能">jquery tab</a><span class="num">32万下载</span>
+            </li>
+            <li class="top">
+                <em>3</em><a href="http://www.jsfoot.com/jquery/images/cj/2011-09-05/167.html"
+                             title="jquery 滚动 kxbdSuperMarquee插件支持图片与文字无缝滚动 图片翻滚 焦点图左右切换 banner广告制作">jquery 滚动</a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>4</em><a href="http://www.jsfoot.com/jquery/letter/gd/2011-09-04/165.html"
+                             title="jquery 文字滚动大全 scroll 支持文字或图片 单行滚动 多行滚动 带按钮控制滚动">jquery 文字</a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>5</em><a href="http://www.jsfoot.com/jquery/images/qh/2011-08-04/102.html"
+                             title="jquery 图片切换插件制作banner图片滚动播放、按钮控制图片滚动、选项卡等基于多功能jquery slide插件">jquery </a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>6</em><a href="http://www.jsfoot.com/jquery/table/px/2011-07-31/92.html"
+                             title="jquery 表格插件:Tablesorter 2.0 插件 表格用户体验内容筛选与分页筛选">jquery </a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>7</em><a href="http://www.jsfoot.com/jquery/table/px/2011-07-31/92.html"
+                             title="jquery 表格插件:Tablesorter 2.0 插件 表格用户体验内容筛选与分页筛选">jquery </a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>8</em><a href="http://www.jsfoot.com/jquery/table/px/2011-07-31/92.html"
+                             title="jquery 表格插件:Tablesorter 2.0 插件 表格用户体验内容筛选与分页筛选">jquery </a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>9</em><a href="http://www.jsfoot.com/jquery/table/px/2011-07-31/92.html"
+                             title="jquery 表格插件:Tablesorter 2.0 插件 表格用户体验内容筛选与分页筛选">jquery </a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>10</em><a href="http://www.jsfoot.com/jquery/table/px/2011-07-31/92.html"
+                              title="jquery 表格插件:Tablesorter 2.0 插件 表格用户体验内容筛选与分页筛选">jquery </a><span
+                    class="num">32万下载</span>
+            </li>
+        </ol>
+        <div class="clear"></div>
+    </div>
+    <!-- top10 end -->
+    <!-- diving start -->
+    <div class="ranklist">
+        <div class="tit">
+            <h2>潜水点</h2>
+        </div>
+        <ol>
+            <li class="top">
+                <em>1</em><a href="http://www.jsfoot.com/jquery/images/cj/2011-10-19/217.html"
+                             title="jquery 图片滚动 xslider 插件 按钮控制自动图片左右滚动、上下滚动">jquery </a><span class="num">32万下载</span>
+            </li>
+            <li class="top">
+                <em>2</em><a href="http://www.jsfoot.com/jquery/xxk/qh/2011-09-28/213.html"
+                             title="jquery tab选项卡插件 轻量级tab选项卡插件支持鼠标滑过、点击、自动切换、数据回调等功能">jquery tab</a><span class="num">32万下载</span>
+            </li>
+            <li class="top">
+                <em>3</em><a href="http://www.jsfoot.com/jquery/images/cj/2011-09-05/167.html"
+                             title="jquery 滚动 kxbdSuperMarquee插件支持图片与文字无缝滚动 图片翻滚 焦点图左右切换 banner广告制作">jquery 滚动</a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>4</em><a href="http://www.jsfoot.com/jquery/letter/gd/2011-09-04/165.html"
+                             title="jquery 文字滚动大全 scroll 支持文字或图片 单行滚动 多行滚动 带按钮控制滚动">jquery 文字</a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>5</em><a href="http://www.jsfoot.com/jquery/images/qh/2011-08-04/102.html"
+                             title="jquery 图片切换插件制作banner图片滚动播放、按钮控制图片滚动、选项卡等基于多功能jquery slide插件">jquery </a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>6</em><a href="http://www.jsfoot.com/jquery/table/px/2011-07-31/92.html"
+                             title="jquery 表格插件:Tablesorter 2.0 插件 表格用户体验内容筛选与分页筛选">jquery </a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>7</em><a href="http://www.jsfoot.com/jquery/table/px/2011-07-31/92.html"
+                             title="jquery 表格插件:Tablesorter 2.0 插件 表格用户体验内容筛选与分页筛选">jquery </a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>8</em><a href="http://www.jsfoot.com/jquery/table/px/2011-07-31/92.html"
+                             title="jquery 表格插件:Tablesorter 2.0 插件 表格用户体验内容筛选与分页筛选">jquery </a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>9</em><a href="http://www.jsfoot.com/jquery/table/px/2011-07-31/92.html"
+                             title="jquery 表格插件:Tablesorter 2.0 插件 表格用户体验内容筛选与分页筛选">jquery </a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>10</em><a href="http://www.jsfoot.com/jquery/table/px/2011-07-31/92.html"
+                              title="jquery 表格插件:Tablesorter 2.0 插件 表格用户体验内容筛选与分页筛选">jquery </a><span
+                    class="num">32万下载</span>
+            </li>
+        </ol>
+        <div class="clear"></div>
+    </div>
+    <!-- diving end -->
+    <!-- tour information start -->
+    <div class="ranklist">
+        <div class="tit">
+            <h2>旅行须知</h2>
+        </div>
+        <ol>
+            <li class="top">
+                <em>1</em><a href="http://www.jsfoot.com/jquery/images/cj/2011-10-19/217.html"
+                             title="jquery 图片滚动 xslider 插件 按钮控制自动图片左右滚动、上下滚动">jquery </a><span class="num">32万下载</span>
+            </li>
+            <li class="top">
+                <em>2</em><a href="http://www.jsfoot.com/jquery/xxk/qh/2011-09-28/213.html"
+                             title="jquery tab选项卡插件 轻量级tab选项卡插件支持鼠标滑过、点击、自动切换、数据回调等功能">jquery tab</a><span class="num">32万下载</span>
+            </li>
+            <li class="top">
+                <em>3</em><a href="http://www.jsfoot.com/jquery/images/cj/2011-09-05/167.html"
+                             title="jquery 滚动 kxbdSuperMarquee插件支持图片与文字无缝滚动 图片翻滚 焦点图左右切换 banner广告制作">jquery 滚动</a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>4</em><a href="http://www.jsfoot.com/jquery/letter/gd/2011-09-04/165.html"
+                             title="jquery 文字滚动大全 scroll 支持文字或图片 单行滚动 多行滚动 带按钮控制滚动">jquery 文字</a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>5</em><a href="http://www.jsfoot.com/jquery/images/qh/2011-08-04/102.html"
+                             title="jquery 图片切换插件制作banner图片滚动播放、按钮控制图片滚动、选项卡等基于多功能jquery slide插件">jquery </a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>6</em><a href="http://www.jsfoot.com/jquery/table/px/2011-07-31/92.html"
+                             title="jquery 表格插件:Tablesorter 2.0 插件 表格用户体验内容筛选与分页筛选">jquery </a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>7</em><a href="http://www.jsfoot.com/jquery/table/px/2011-07-31/92.html"
+                             title="jquery 表格插件:Tablesorter 2.0 插件 表格用户体验内容筛选与分页筛选">jquery </a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>8</em><a href="http://www.jsfoot.com/jquery/table/px/2011-07-31/92.html"
+                             title="jquery 表格插件:Tablesorter 2.0 插件 表格用户体验内容筛选与分页筛选">jquery </a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>9</em><a href="http://www.jsfoot.com/jquery/table/px/2011-07-31/92.html"
+                             title="jquery 表格插件:Tablesorter 2.0 插件 表格用户体验内容筛选与分页筛选">jquery </a><span
+                    class="num">32万下载</span>
+            </li>
+            <li>
+                <em>10</em><a href="http://www.jsfoot.com/jquery/table/px/2011-07-31/92.html"
+                              title="jquery 表格插件:Tablesorter 2.0 插件 表格用户体验内容筛选与分页筛选">jquery </a><span
+                    class="num">32万下载</span>
+            </li>
+        </ol>
+        <div class="clear"></div>
+    </div>
+    <!-- tour information end -->
+
+    <!-- hot recommend start -->
+    <div class="imagesidebar">
+        <div class="tit">
+            <h2>热门推荐</h2>
+        </div>
+        <ol>
+            <li>
+                <img alt="大图" width="158" height="105" src="#springUrl('')/static/images/dao_1.jpg"/>
+                <span>巨星夏威夷</span>
+            </li>
+            <li>
+                <img alt="大图" width="158" height="105" src="#springUrl('')/static/images/dao_1.jpg"/>
+                <span>优质斐济</span>
+            </li>
+            <li>
+                <img alt="大图" width="158" height="105" src="#springUrl('')/static/images/dao_1.jpg"/>
+                <span>阳光毛里求斯</span>
+            </li>
+            <li>
+                <img alt="大图" width="158" height="105" src="#springUrl('')/static/images/dao_1.jpg"/>
+                <span>浪漫塞班</span>
+            </li>
+        </ol>
+        <div class="clear"></div>
+    </div>
+    <!-- hot recommend end -->
+</div>
+<!-- sidebar end -->
+<div class="clear"></div>
+<!-- bottom start -->
+<!-- image scroll start -->
+<div style="height:200px;">
+    <div id="shelf" style="background-position:0 0;">
+        <div id="imagescroll">
+            <img title="title #1" src="#springUrl('')/static/images/1.jpg"/>
+            <img title="title #2" src="#springUrl('')/static/images/2.jpg"/>
+            <img title="title #3" src="#springUrl('')/static/images/3.jpg"/>
+            <img title="title #4" src="#springUrl('')/static/images/4.jpg"/>
+            <img title="title #5" src="#springUrl('')/static/images/5.jpg"/>
+            <img title="title #6" src="#springUrl('')/static/images/6.jpg"/>
+            <img title="title #7" src="#springUrl('')/static/images/7.jpg"/>
+            <img title="title #1" src="#springUrl('')/static/images/1.jpg"/>
+            <img title="title #2" src="#springUrl('')/static/images/2.jpg"/>
+            <img title="title #3" src="#springUrl('')/static/images/3.jpg"/>
+            <img title="title #4" src="#springUrl('')/static/images/4.jpg"/>
+        </div>
+    </div>
+</div>
+<!-- image scroll end -->
+
+<div style="height:100px;">ddddddddddd</div>
+<!-- bottom end -->
+</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+﻿
+@charset "utf-8";
+/* CSS Document */
+
+*{ margin:0; padding:0; }
+
+body 
+{   font-size:12px;  color:#333; line-height:23px; font-family: Arial, Helvetica, sans-serif,"Microsoft Yahei","宋体";
+  text-align:center;
+
+
+}
+
+
+
+/*#top,.main,#foot,.banner{
+	width:980px; 
+	margin:0 auto; 
+	text-align:left;
+	
+	}*/
+
+ul , li,dl,dd,dt{ list-style:none; margin:0; padding:0;}
+img{ border:none;}
+
+a:link,a:visited {color:#002398; text-decoration:none; cursor:pointer; outline:none; }
+/*a:visited{color:#923D3D;  text-decoration:none; }*/
+
+a:hover, a:active{ color:#ff6600;   text-decoration:none; }
+
+/*a {blr:expression(this.onFocus=this.blur())}*/
+.float_left{ float:left;}
+.float_center{ float:left;}
+.float_right{ float:right;}
+.clear{ clear:both; height:0px; line-height:0px; font-size:0px;
+overflow:hidden; visibility:hidden;}
+
+h3,h4{ font-size:14px;}
+.num{ font-size:22px; font-family:Georgia, "Times New Roman", Times, serif;
+color:#8e273d;}
+
+select{ cursor:pointer;}
+em,i{ font-style:normal;}	
+
+/*header*/
+#footer{ text-align:center;
+background-color:#f5f4f0; 
+padding:20px 0;
+overflow:hidden; zoom:1;}
+.head,.main,.foot{
+	width:1000px; margin:0 auto; text-align:left;}
+#header{
+	height:63px; 
+	background-color:#f9ae41;}
+	
+#logo{
+	width:250px;
+	float:left;
+	margin:7px 0 0  0;}
+#menu{
+	width:500px;
+	float:right;}
+	
+#menu li{
+	width:100px;
+	float:left;}
+#menu li a{
+	display:block;
+	height:28px;
+	text-align:center;
+	padding-top:25px;
+	font-size:15px;
+	
+	
+    
+	}
+#menu li a:link,#menu li a:visited{
+	color:#333;}
+#menu li a:hover,#menu li a:active,#menu li a.selected{
+	color:#fff;
+	background:url(../images/index/title.png) 10px 24px no-repeat;}
+	.both{ clear:both;}
+	em{ font-style:normal;}
+
+
+	.friend-t{
+		font-size:13px;
+		
+		color:#aaa;
+		margin:12px 0 0 0px;
+		}
+		.friend a{ padding:0  4px 0 0;}
+		#downnav a{ padding:0  5px;}
+	.friend a:link,.friend a:visited{
+		color:#aaa;}
+	.friend a:hover,.friend a:active{
+		color:#ff6600;}
+		
+		#downnav{ padding:10px  0  20px;
+			color:#9a9a9a; width:450px; float:left;}
+			#downnav a:link,#downnav a:visited{
+		color:#9a9a9a;}
+	#downnav a:hover,#downnav a:active{
+		color:#ff6600;}
+#copyright{padding:10px  0  20px;
+	 width:400px; float:right; text-align:right; margin-right:12px;color:#9a9a9a;}
+
+.m10{ margin:10px;}
+.p10{ padding:10px;}
+.mt10{ margin-top:10px;}
+
+		

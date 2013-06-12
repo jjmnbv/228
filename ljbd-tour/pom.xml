@@ -9,12 +9,9 @@
 
     <groupId>com.ljbd.tour</groupId>
     <artifactId>ljbd-tour</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <name>ljbd-tour</name>
-    <modules>
-        <module>ljbd-tour-maldives</module>
-    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

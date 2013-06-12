@@ -29,7 +29,7 @@
 
         $(function () {
 
-            //navSlider   test
+            //navSlider
             function navSlider(){
                 var nav = $('.nav')
                 var   cur = $('.nav li.cur a')

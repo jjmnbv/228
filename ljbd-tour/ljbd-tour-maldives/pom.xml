@@ -1,20 +1,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>ljbd</artifactId>
-        <groupId>ljbd</groupId>
+        <artifactId>ljbd-tour</artifactId>
+        <groupId>com.ljbd.tour</groupId>
         <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ljbd.tour</groupId>
-    <artifactId>ljbd-tour</artifactId>
-    <packaging>pom</packaging>
+    <groupId>com.ljbd.tour.maldives</groupId>
+    <artifactId>ljbd-tour-maldives</artifactId>
+    <packaging>jar</packaging>
 
-    <name>ljbd-tour</name>
-    <modules>
-        <module>ljbd-tour-maldives</module>
-    </modules>
+    <name>ljbd-tour-maldives</name>
+    <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

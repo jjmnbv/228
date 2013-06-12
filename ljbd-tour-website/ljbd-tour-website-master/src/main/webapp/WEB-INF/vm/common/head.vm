@@ -1,0 +1,84 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>马尔代夫</title>
+    <meta name="description" content="北京青年旅行社马尔代夫"/>
+    <style type="text/css">
+    </style>
+
+    <!-- image css -->
+    <link type="text/css" rel="stylesheet" href="#springUrl('')/static/css/style.css"/>
+
+    <!-- common js -->
+    <script type="text/javascript" src="#springUrl('')/static/js/jquery-1.7.2.min.js"></script>
+    <!-- advbox -->
+    <script type="text/javascript" src="#springUrl('')/static/js/advbox.js"></script>
+    <!-- image nav -->
+    <script type="text/javascript" src="#springUrl('')/static/js/imagenav.js"></script>
+    <!-- 1 left content -->
+    <script type="text/javascript" src="#springUrl('')/static/js/list.js"></script>
+    <!-- top10 -->
+    <script type="text/javascript" src="#springUrl('')/static/js/top10.js"></script>
+    <script type="text/javascript" src="#springUrl('')/static/js/lazyload.js"></script>
+    <!-- brand -->
+    <script type="text/javascript" src="#springUrl('')/static/js/brand.js"></script>
+    <!-- 3 content -->
+    <script type="text/javascript" src="#springUrl('')/static/js/jquery.coverscroll.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+
+            //navSlider
+            function navSlider(){
+                var nav = $('.nav');
+                var   cur = $('.nav li.cur a') ;
+                var   navLine = $('.nav-line') ;
+                var   anchor = $('a',nav.children()) ;
+                var curPosL = cur.position().left;
+                var curW = cur.outerWidth(true) ;
+                var curIdx = $('li.cur',nav).index()  ;
+                navLine.css({'width':curW,'left':curPosL});
+                anchor.each(function(index){
+                    var posL = $(this).position().left ;
+                    var w = $(this).outerWidth(true)   ;
+                    $(this).mouseenter(function(){
+                        navLine.animate({'width':w,'left':posL},250);
+                        $(this).parent().addClass('cur').siblings().removeClass('cur');
+                    });
+                });
+                /* 去掉last */
+
+                nav.mouseleave(function(){
+                    navLine.animate({'width':curW,'left':curPosL},250);
+                    anchor.parent(':eq('+curIdx+')').addClass('cur').siblings().removeClass('cur');
+                });
+            };
+            //广告
+            AdvClick();
+            //顶部通览可展开收起效果
+            if ($("#actionimg").length > 0) {
+                $("#actionimg").onload = AdvAuto();
+            }
+
+            //imagenav
+            imagenav();
+
+            //nav效果
+            navSlider();
+
+            //TOP10
+            $("img[original]").lazyload({ placeholder: "http://www.jsfoot.com/skinnew/images/color3.gif" });//第一次加载使用
+            TabHeads("#topic01 dt", "on", "#topic01 dd");
+
+            //hotels brands
+            allBrandAnimate($('.allbrand'), 80);
+
+            //imagescroll
+            $('#imagescroll').coverscroll();
+
+        });
+
+
+    </script>
+
+</head>

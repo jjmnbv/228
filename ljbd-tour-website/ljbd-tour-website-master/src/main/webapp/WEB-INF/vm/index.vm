@@ -47,7 +47,7 @@
                     $(this).parent().addClass('cur').siblings().removeClass('cur');
                 });
                 });
-                /* 去掉last test sds */
+                /* 去掉last */
 
                     nav.mouseleave(function(){
                     navLine.animate({'width':curW,'left':curPosL},250);

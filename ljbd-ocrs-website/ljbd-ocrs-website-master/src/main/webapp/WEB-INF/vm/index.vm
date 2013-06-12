@@ -1,0 +1,922 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="Stylesheet" href="#springUrl('')/static/css/global.css" type="text/css" />
+<link rel="Stylesheet" href="#springUrl('')/static/css/index.css" type="text/css" />
+
+<script type="text/javascript" src="#springUrl('')/static/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="#springUrl('')/static/js/index.js"></script>
+<script type="text/javascript" src="#springUrl('')/static/js/jquery-calendar1.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+    <div id="header">
+       <div class="head">
+        <h1 id="logo"><a href="index.html"><img src="#springUrl('')/static/images/global/logo.png"  alt="常租车" /></a></h1>
+
+
+        <ul id="menu">
+                <li ><a class="selected"  href="#">首页</a></li>
+                 <li ><a   href="#">国际租车</a></li>
+                 <li ><a   href="#">国内租车</a></li>
+                 <li ><a   href="#">订单查询</a></li>
+                 <li ><a   href="#">常见问题</a></li>
+
+
+
+            </ul>
+        </div>
+
+    </div>
+    <div  class="banner">
+     <div  id="bannerbg"></div>
+       <div class="border7">
+       <div class="searchbox">
+
+
+         <div class="area-s">
+               <div  class="input-text site">
+               取车国家-城市-取车点
+               <span class="icon map"> </span>
+               </div>
+             <div  class="input-text site">
+                            还车国家-城市-还车点
+                       <span class="icon map"> </span>
+                       </div>
+
+
+
+                       <div class="clear"></div>
+                            <input type="text" class="calendarFocus c1 input-text" id="calendar1" value="取车时间">
+                    <input type="text" class="calendarFocus c2 input-text" id="calendar2" value="还车时间">
+              
+
+
+
+          </div>
+          <div  class="indexes-box" >
+                   <div class="quick-sch">
+
+                      <div class="sea-input"> <input type="text"  value="输入关键词试试(支持中文/英文)，如巴黎，Paris" name="keyword"   class="textbox"></div>
+                      <div class="ser-close">
+                         <a title="删除" href="#"></a>
+                      </div>
+                      <div class="ser_btn">
+                      <a href=""> <em>搜索</em>  </a>
+                      </div>
+                      <div class="close close_ser"><a href=""></a></div>
+
+                   </div>
+
+                   <!--搜索框　ＥＮＤ-->
+                  <div class="area-box">
+                  <ul >
+                    <li class="country_nav">
+
+                           <div class="letter-list">
+                             <span><i class="letter-country">国家</i>
+                             <a href="#" title="以A开头">A</a><a href="#" title="以B开头">B</a><a href="#" title="以C开头">C</a><a href="#" title="以D开头">D</a><a href="#" title="以E开头">E</a><a href="#" title="以F开头">F</a><a href="#" title="以G开头">G</a><a href="#" title="以H开头">H</a><a href="#" title="以I开头">I</a><a href="#" title="以J开头">J</a><a href="#" title="以K开头">K</a><a href="#" title="以L开头">L</a><a href="#" title="以M开头">M</a><a href="#" title="以N开头">N</a><a href="#" title="以O开头">O</a><a href="#" title="以P开头">P</a><a href="#" title="以Q开头">Q</a><a href="#" title="以R开头">R</a><a href="#" title="以S开头">S</a><a href="#" title="以T开头">T</a><a href="#" title="以U开头">U</a><a href="#" title="以V开头">V</a><a href="#" title="以W开头">W</a><a href="#" title="以X开头">X</a><a href="#" title="以Y开头">Y</a><a href="#" title="以Z开头">Z</a>
+                             </span>
+                             <div class="clear"></div>
+                          </div>
+
+
+
+                    </li>
+                    <li class="city_nav">
+
+                      <div class="letter-list">
+                             <span><i class="letter-country">城市</i>
+                             <a href="#" title="以A开头">A</a><a href="#" title="以B开头">B</a><a href="#" title="以C开头">C</a><a href="#" title="以D开头">D</a><a href="#" title="以E开头">E</a><a href="#" title="以F开头">F</a><a href="#" title="以G开头">G</a><a href="#" title="以H开头">H</a><a href="#" title="以I开头">I</a><a href="#" title="以J开头">J</a><a href="#" title="以K开头">K</a><a href="#" title="以L开头">L</a><a href="#" title="以M开头">M</a><a href="#" title="以N开头">N</a><a href="#" title="以O开头">O</a><a href="#" title="以P开头">P</a><a href="#" title="以Q开头">Q</a><a href="#" title="以R开头">R</a><a href="#" title="以S开头">S</a><a href="#" title="以T开头">T</a><a href="#" title="以U开头">U</a><a href="#" title="以V开头">V</a><a href="#" title="以W开头">W</a><a href="#" title="以X开头">X</a><a href="#" title="以Y开头">Y</a><a href="#" title="以Z开头">Z</a>
+                             </span>
+                             <div class="clear"></div>
+                          </div>
+
+
+                    </li>
+
+                    <li class="Infor-box country_box" >
+                       <span class="Letter-tit f12">热门国家</span>
+                       <span class="Letter-tit">A</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>澳大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+                          <span class="Letter-tit">B</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                            <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+
+                            <span class="Letter-tit ">C</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>澳大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+                          <span class="Letter-tit">D</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+
+                            <span class="Letter-tit">E</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>澳大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+                          <span class="Letter-tit">F</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+
+                            <span class="Letter-tit">G</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>澳大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+                          <span class="Letter-tit">H</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+
+                            <span class="Letter-tit">I</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+                          <span class="Letter-tit">J</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+                            <span class="Letter-tit">K</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+                          <span class="Letter-tit">L</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+
+                            <span class="Letter-tit">M</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+                          <span class="Letter-tit">N</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+
+                           <span class="Letter-tit">O</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+
+                           <span class="Letter-tit">P</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+
+                           <span class="Letter-tit">Q</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+
+                           <span class="Letter-tit">R</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+
+                           <span class="Letter-tit">S</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+
+                           <span class="Letter-tit">T</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+
+
+
+
+
+                           <span class="Letter-tit">U</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+
+                           <span class="Letter-tit">V</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+
+                           <span class="Letter-tit">W</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+
+
+                           <span class="Letter-tit">X</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+
+                           <span class="Letter-tit">Y</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+
+                           <span class="Letter-tit">Z</span>
+                       <div  class="both">
+                           <a class="country_a cf4 b"  href="#"><em>澳B大利亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>阿B尔巴尼亚</em></a>
+                           <a class="country_a cf4 b"  href="#"><em>安道尔</em></a>
+                       </div>
+
+
+                    </li>
+
+
+                     <li class="Infor-box city_box">
+                       <span class="Letter-tit f12">城市</span>
+                       <span class="Letter-tit">A</span>
+                       <div  class="both">
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>Th Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+
+                       </div>
+                          <span class="Letter-tit">B</span>
+                       <div  class="both">
+                            <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Vallfdfey Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Vafdaflley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The fada Downtown</a></dd>
+
+                         </dl>
+                       </div>
+
+                            <span class="Letter-tit ">C</span>
+                       <div  class="both">
+                            <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley </a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The  Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The  Downtown</a></dd>
+
+                         </dl>
+                       </div>
+                          <span class="Letter-tit">D</span>
+                       <div  class="both">
+                            <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley </a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley </a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+
+                            <span class="Letter-tit">E</span>
+                       <div  class="both">
+                           <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The  Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The  Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+                          <span class="Letter-tit">F</span>
+                       <div  class="both">
+                            <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+
+                            <span class="Letter-tit">G</span>
+                       <div  class="both">
+                           <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+                          <span class="Letter-tit">H</span>
+                       <div  class="both">
+                            <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+
+                            <span class="Letter-tit">I</span>
+                       <div  class="both">
+                            <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+                          <span class="Letter-tit">J</span>
+                       <div  class="both">
+                           <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+                            <span class="Letter-tit">K</span>
+                       <div  class="both">
+                           <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+                          <span class="Letter-tit">L</span>
+                       <div  class="both">
+                           <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+
+                            <span class="Letter-tit">M</span>
+                       <div  class="both">
+                           <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+                          <span class="Letter-tit">N</span>
+                       <div  class="both">
+                            <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+
+                           <span class="Letter-tit">O</span>
+                       <div  class="both">
+                            <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+
+                           <span class="Letter-tit">P</span>
+                       <div  class="both">
+                           <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+
+                           <span class="Letter-tit">Q</span>
+                       <div  class="both">
+                           <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+
+                           <span class="Letter-tit">R</span>
+                       <div  class="both">
+                            <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+
+                           <span class="Letter-tit">S</span>
+                       <div  class="both">
+                           <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+
+                           <span class="Letter-tit">T</span>
+                       <div  class="both">
+                           <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+
+
+
+
+
+                           <span class="Letter-tit">U</span>
+
+                       <div  class="both">
+                            <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+
+                           <span class="Letter-tit">V</span>
+                       <div  class="both">
+                           <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+
+                           <span class="Letter-tit">W</span>
+                       <div  class="both">
+                           <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+
+
+                           <span class="Letter-tit">X</span>
+                       <div  class="both">
+                           <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+
+                           <span class="Letter-tit">Y</span>
+                       <div  class="both">
+                           <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+
+                           <span class="Letter-tit">Z</span>
+                       <div  class="both">
+                           <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                          <span class="city_a"  >Gorizia<em   class="r">戈里齐亚</em></span>
+                          <dl ><dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+                               <dd> <a title="山谷市市区" href="#"><b class=""></b>The Valley Downtown</a></dd>
+
+                         </dl>
+                       </div>
+
+                       </li>
+                 </ul></div>
+
+               </div>
+        
+
+           <div class="note">取还车时间以当地时间为准！</div>
+         <input name="" type="button" class="titlebg search_btn" />
+      </div>
+      </div>
+
+    </div>
+    <div id="step"><img src="#springUrl('')/static/images/index/step.jpg" width="1000" height="87" /></div>
+    <div class="clear"></div>
+    <div class="main">
+        <h3 class=" hot-city">热门租车城市</h3>      <div class="clear"></div>
+        <ul id="hot-city">
+           <li>
+             <a href="#">纽约 <i>（New York）</i></a>
+            <a  href="#" title=""><img src="#springUrl('')/static/images/index/city/city1.jpg" width="182" height="65" /></a>
+           </li>
+             <li>
+             <a href="#">旧金山 <i>（San-Francisco）</i></a>
+            <a  href="#" title=""><img src="#springUrl('')/static/images/index/city/city2.jpg" width="182" height="65" /></a>
+           </li>
+            <li>
+             <a href="#">洛杉矶 <i>（Los Angeles）</i></a>
+             <a  href="#" title=""><img src="#springUrl('')/static/images/index/city/city3.jpg" width="182" height="65" /></a>
+           </li>
+            <li>
+             <a href="#">悉尼 <i>（Sydney）</i></a>
+             <a  href="#" title=""><img src="#springUrl('')/static/images/index/city/city4.jpg" width="182" height="65" /></a>
+           </li>
+            <li>
+             <a href="#">伦敦 <i>（London）</i></a>
+             <a  href="#" title=""><img src="#springUrl('')/static/images/index/city/city5.jpg" width="182" height="65" /></a>
+           </li>
+            <li>
+             <a href="#">柏林 <i>（Berlin）</i></a>
+             <a  href="#" title=""><img src="#springUrl('')/static/images/index/city/city6.jpg" width="182" height="65" /></a>
+           </li>
+            <li>
+             <a href="#">巴黎 <i>（Paris）</i></a>
+             <a  href="#" title=""><img src="#springUrl('')/static/images/index/city/city7.jpg" width="182" height="65" /></a>
+           </li>
+            <li>
+             <a href="#">罗马 <i>（Rome）</i></a>
+             <a  href="#" title=""><img src="#springUrl('')/static/images/index/city/city8.jpg" width="182" height="65" /></a>
+           </li>
+            <li>
+             <a href="#">巴塞罗那 <i>（Barcelone）</i></a>
+             <a  href="#" title=""><img src="#springUrl('')/static/images/index/city/city9.jpg" width="182" height="65" /></a>
+           </li>
+            <li>
+             <a href="#">迪拜 <i>（Dubai）</i></a>
+            <a  href="#" title=""><img src="#springUrl('')/static/images/index/city/city10.jpg" width="182" height="65" /></a>
+           </li>
+            <li>
+             <a href="#">夏威夷 <i>（Hawaii）</i></a>
+             <a  href="#" title=""><img src="#springUrl('')/static/images/index/city/city11.jpg" width="182" height="65" /></a>
+           </li>
+            <li>
+             <a href="#">曼谷 <i>（Bangkok）</i></a>
+             <a  href="#" title=""><img src="#springUrl('')/static/images/index/city/city12.jpg" width="182" height="65" /></a>
+           </li>
+            <li>
+             <a href="#">纽约 <i>（New York）</i></a>
+             <a  href="#" title=""><img src="#springUrl('')/static/images/index/city/city13.jpg" width="182" height="65" /></a>
+           </li>
+            <li>
+             <a href="#">纽约 <i>（New York）</i></a>
+            <a  href="#" title=""><img src="#springUrl('')/static/images/index/city/city14.jpg" width="182" height="65" /></a>
+           </li>
+            <li>
+             <a href="#">纽约 <i>（New York）</i></a>
+             <a  href="#" title=""><img src="#springUrl('')/static/images/index/city/city15.jpg" width="182" height="65" /></a>
+           </li>
+
+        </ul>
+        <div id="hot-city">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="clear"></div>
+        <h3 class=" more-content">更多内容</h3>
+
+          <ul class="more_d">
+          <li><a  href="#" title="热门国家"><b class="titlebg more1"></b>热门国家</a></li>
+          <li><a  href="#" title="常见问题"><b class="titlebg more2"></b>常见问题</a></li>
+          <li><a  href="#" title="攻略线路"><b class="titlebg more3"></b>攻略线路</a></li>
+          <li><a  href="#" title="关注我们"><b class="titlebg more4"></b>关注我们</a></li>
+          <li><a  href="#" title="合作伙伴"><b class="titlebg more5"></b>合作伙伴</a></li></ul>
+
+
+     </div>
+
+  <div id="footer">
+  <div class="foot">
+
+    <div id="contact">
+        <h3 class="contact">联系客服</h3>
+        <ul class="contact_d">
+          <li> 021-60441118</li>
+          <li>cs@changzuche.com</li>
+          <li>工作日09:00—21:00</li>
+        </ul>
+    </div>
+
+
+
+       <div id="super">
+            <h3 class="super">为什么选择常租车</h3>
+          <ul class="super_d">
+            <li><b>全中文页面：</b>方便用户查询、比较，条款清晰，高效完成预定流程。</li>
+            <li><b>网点遍布全球：</b>覆盖135个国家及地区，6000个顶级租车服务网点。</li>
+            <li><b>价格及订单保障：</b>全球供应商提供超值车辆，免费修改、取消订单。</li>
+
+          </ul>
+
+       </div>
+    <div id="supply">
+            <h3 class="supply ">全球供应商</h3>
+  <ul class="s_d">
+            <li><a href="#">europcar</a></li>
+            <li><a href="#">hertz</a></li>
+            <li><a href="#">avis</a></li>
+            <li><a href="#">national</a></li>
+            <li><a href="#">sixt</a></li>
+            <li><a href="#">budget</a></li>
+            <li><a href="#">thrifty</a></li>
+            <li><a href="#">alamo</a></li>
+            <li><a href="#">dollar</a></li>
+            <li><a href="#">redspot</a></li>
+            <li><a href="#">tempest</a></li>
+            <li><a href="#">centquro</a></li>
+
+
+          </ul>
+
+       </div>
+     <div class="clear"></div>
+     <div id="hot">
+        <div id="h-country">
+          <h3>热门国家</h3>
+
+          <div class="country-list">
+              <a href="#">美国租车</a>
+              <a href="#">法国租车</a>
+              <a href="#">德国租车</a>
+              <a href="#">意大利租车</a>
+              <a href="#">澳大利亚租车</a>
+              <a href="#">加拿大租车</a>
+              <a href="#">西班牙租车</a>
+              <a href="#">瑞士租车</a>
+              <a href="#">新西兰租车</a>
+              <a href="#">泰国租车</a>
+              <a href="#">土耳其租车</a>
+              <a href="#">英国租车</a>
+              <a href="#">挪威租车</a>
+              <a href="#">南非租车</a>
+
+
+          </div>
+
+        </div>
+         <div id="h-city">
+             <h3 class="m_l_10">热门城市</h3>
+          <div class="city-list">
+              <a href="#">纽约租车</a>
+              <a href="#">旧金山租车</a>
+              <a href="#">洛杉矶租车</a>
+              <a href="#">悉尼租车</a>
+              <a href="#">巴塞罗那租车</a>
+              <a href="#">奥兰多租车</a>
+              <a href="#">柏林租车</a>
+              <a href="#">巴黎租车</a>
+              <a href="#">罗马租车</a>
+              <a href="#">法兰克福租车</a>
+              <a href="#">伦敦租车</a>
+              <a href="#">迪拜租车</a>
+              <a href="#">夏威夷租车</a>
+              <a href="#">曼谷租车</a>
+
+
+          </div>
+
+         </div>
+
+
+     </div>
+<div class="clear"></div>
+<h3 class="friend-t">友情链接</h3>
+        <div class="friend">
+            <a href="#" >墙根网</a>
+             <a href="#" > 517户外</a>
+              <a href="#" > 六只脚 </a>
+               <a href="#" >出城网 </a>
+                <a href="#" >周边游</a>
+                 <a href="#" > 磨房网 </a>
+                  <a href="#" > 也去旅行网 </a>
+                   <a href="#" > 路趣 </a>
+                    <a href="#" > 旅行者 </a>
+             <a href="#" > 那里出行</a>
+              <a href="#" >一起游吧 </a>
+               <a href="#" > 拼途网  </a>
+                <a href="#" > 立马走</a>
+                 <a href="#" > 友朋风景网 </a>
+                  <a href="#" > 搜旅网 </a>
+                   <a href="#" > 途客圈  </a>
+                    <a href="#" >全景客 </a>
+             <a href="#" > 旅人网 </a>
+              <a href="#" > 微途 </a>
+               <a href="#" >游社</a>
+
+        </div>
+
+
+
+        <div id="downnav">
+
+            <a href=" #">关于我们</a> |
+              <a href=" #">联系我们</a> |
+                <a href=" #">加入我们</a> |
+                  <a href=" #">隐私条款</a> |
+                    <a href=" #">免费申明</a> |
+                      <a href=" #">服务协议</a>
+
+        </div>
+        <p id="copyright">© 2011-2012 changzuche.com All rights reserved. 沪ICP备12016385号</p>
+
+      </div>
+    </div>
+
+</body>
+</html>

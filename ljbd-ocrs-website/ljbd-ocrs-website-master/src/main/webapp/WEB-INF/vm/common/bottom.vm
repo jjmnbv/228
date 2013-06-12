@@ -1,0 +1,347 @@
+<span style="display:block;" style="color:white;"></span>
+<script type="text/javascript">
+$(function() {
+    //右侧菜单动画
+    if ($("#eastPanelBg2").length > 0) {
+        var oLis = $("#eastPanelBg2 li");
+        oLis.each(function() {
+            var oLi = $(this);
+            if (jQuery.trim(oLi.text()) == "查询") {
+                oLi.css({
+                            fontSize:18,
+                            backgroundPosition: "0 4px"
+                        });
+
+                //使查询区域内的下拉框选中后失去焦点
+                $("#area_query select").bind("change", function() {
+                    $(this).blur();
+                });
+
+                //在查询区域按回车默认执行查询
+                $(document).bind("keydown", function(e) {
+                    var obj = e.srcElement ? e.srcElement : e.target;
+                    if (FJ.fixE(e).key == 13) {
+                        //alert(obj.tagName);
+                        //除焦点在以下元素外点击回车执行查询
+                        if (obj.tagName != "SELECT" && obj.tagName != "TEXTAREA" && obj.tagName != "A" && !$(obj).hasClass("ac_input")) {
+                            selectInfo();
+                        }
+                    }
+                });
+            }
+        });
+
+        oLis.unbind("mouseenter").unbind("mouseleave").css("color", "#086D9C").hover(
+                function() {
+                    var fs = 15;
+                    if (jQuery.trim($(this).text()) == "查询") {
+                        fs = 20;
+                    }
+                    $(this).stop().animate({
+                                fontSize:fs
+                            }, 200);
+                },
+                function() {
+                    var fs = 13;
+                    if (jQuery.trim($(this).text()) == "查询") {
+                        fs = 18;
+                    }
+                    $(this).stop().animate({
+                                fontSize:fs
+                            }, 200);
+                }
+        );
+    }
+    //收缩展开合计区域
+    window.isHideBottom = false;
+    window.hideBottom = function() {
+        if (!isHideBottom) {
+            isHideBottom = true;
+            $("#area_total").height(8);
+            $("#area_total table").hide();
+            reLayout();
+        }
+        else {
+            isHideBottom = false;
+            $("#area_total").height(68);
+            $("#area_total table").show();
+            reLayout();
+        }
+        //oDgj.autoLoadlazyRow();
+    };
+
+    //收缩展开右侧控件
+    window.isHideEast = false;
+    window.hideEast = function() {
+        if (!isHideEast) {
+            isHideEast = true;
+            $("div.right").width(31);
+            $("#eastPanel").width(21).css("margin-left", 0);
+            $("#eastPanel2").hide();
+            //reLayout();
+        }
+        else {
+            isHideEast = false;
+            $("div.right").width(180);
+            $("#eastPanel").width(170).css("margin-left", 23);
+            $("#eastPanel2").show();
+            //reLayout();
+        }
+        if (typeof oDgj != "undefined")
+            oDgj.setTableWidth();
+        //oDgj.autoLoadlazyRow();
+    };
+
+    //收缩展开左侧菜单
+    window.hideWest = function() {
+        if (top.myLayout && typeof loadIframe == "undefined")
+            top.myLayout.toggle("west");
+
+    };
+    //收缩展开上方控件
+    window.hideNorth = function() {
+        if (top.myLayout && typeof loadIframe == "undefined")
+            top.myLayout.toggle("north");
+    };
+
+    //隐藏all
+    window.hideAll = function() {
+        hideWest();
+        hideNorth();
+        hideEast();
+        hideBottom();
+        //$("#area_query").hide();
+    };
+
+    //快捷键
+    $(document).bind("keydown", function(e) {
+        if (typeof oDgj != "undefined") {
+            if (oDgj.isFullScreen) {   //全屏后不执行折叠区域快捷键
+                return;
+            }
+        }
+
+        e = FJ.fixE(e);
+        if ((e.keyCode == 37) && e.ctrlKey) {
+            hideWest();
+        }
+        else if ((e.keyCode == 38) && e.ctrlKey) {
+            hideNorth();
+        }
+        if ((e.keyCode == 39) && e.ctrlKey) {
+            hideEast();
+        }
+        else if ((e.keyCode == 40) && e.ctrlKey) {
+            hideBottom();
+        }
+        //shift+空格快捷隐藏四周
+        else if (e.keyCode == 32 && e.shiftKey) {
+            hideAll();
+        }
+    });
+
+//        $(parent.document).bind("keydown",function(e){
+//            if(typeof oDgj  != "undefined") {
+//                if(oDgj.isFullScreen) {   //全屏后不执行折叠区域快捷键
+//                    return;
+//                }
+//            }
+//
+//            e = FJ.fixE(e);
+//            if ((e.keyCode == 37) && e.ctrlKey){
+//                hideWest();
+//            }
+//            else if ((e.keyCode == 38) && e.ctrlKey){
+//                hideNorth();
+//            }
+//            else if ((e.keyCode == 39) && e.ctrlKey){
+//                $("mainframe").contents().find("#eastPanel").width(21);
+//                //$(parent.document).contents().find("#eastPanel").width(21);
+//                $(parent.document).contents().find("#eastPanel2").hide();
+//                //hideEast();
+//            }
+//            else if ((e.keyCode == 40) && e.ctrlKey){
+//                hideBottom();
+//            }
+////            else if ((e.keyCode == 40) && e.ctrlKey){
+////                hideAll();
+////            }
+//        });
+
+    $("#btnEast1").bind("click", function() {
+        hideEast();
+    });
+
+    //注册表格全屏事件
+    if (typeof DGJ != "undefined") {
+        var myLayout;
+        var oLayoutWest;
+        var oLayoutNorth;
+        var oLayoutCenter;
+        var oLayoutResizer;
+        if (parent.parent) {
+            myLayout = parent.parent.myLayout;
+            oLayoutWest = $("div.ui-layout-west", parent.parent.document);
+            oLayoutNorth = $("div.ui-layout-north", parent.parent.document);
+            oLayoutResizer = $("div.ui-layout-resizer", parent.parent.document);
+            oLayoutCenter = $("#ui-layout-center", parent.parent.document);
+        }
+
+        window.reLayoutFS = function() {
+            var h = $("body").height();
+            $("#area_table").height(h);
+            $("#divGrid").height(h - ($("#gridHead").length <= 0 ? 28 : 45));
+            oDgj.setMainHeight();
+        };
+
+        window.setLayoutResize = function() {
+            oLayoutResizer.hide();
+            oLayoutCenter.css("top", 0).css("left", 0);
+        };
+
+        DGJ.onFullScreen = function() {
+            if (typeof oDgj != "undefined") {
+                var oTabHead = $("ul.ui-tabs-nav", parent.document);
+                var oDivRight = $("div.right");
+                var oDivWarp = $("div.wrap");
+                var oAreaQuery = $("#area_query");
+                var oAreaTotal = $("#area_total");
+                var oAreaQuery1 = $("#areaquery1");
+                var oAreaVender = $("#area_vender");
+                var oDivInput = $("#divInput");
+                var oUiTabsBtn = $("input.ui-tabs-btn");
+
+                if (!this.isFullScreen) {
+                    $(window).bind("resize", reLayoutFS);
+                    if (oTabHead.length > 0) {
+                        if (oTabHead.is(":visible")) {
+                            if (parent.setTabsPanelSize) {
+                                parent.setTabsPanelSize();
+                            }
+                        }
+                        oTabHead.hide();
+                    }
+                    if (myLayout) {
+                        if (oLayoutResizer.is(":visible")) {
+                            myLayout.toggle("north");
+                            myLayout.toggle("west");
+                            oLayoutResizer.hide();
+                            oLayoutCenter.css("top", 0).css("left", 0);
+                            $(window).bind("resize", setLayoutResize);
+                        }
+                        oLayoutWest.hide();
+                        oLayoutNorth.hide();
+                    }
+                    if (oDivWarp.length > 0) {
+                        oDivWarp.css("margin-top", 6);
+                    }
+                    if (oDivRight.length > 0) {
+                        oDivRight.hide();
+                    }
+                    if (oAreaQuery.length > 0) {
+                        oAreaQuery.hide();
+                    }
+                    if (oAreaQuery1.length > 0) {
+                        oAreaQuery1.hide();
+                    }
+                    if (oAreaVender.length > 0) {
+                        oAreaVender.hide();
+                    }
+                    if (oAreaTotal.length > 0) {
+                        oAreaTotal.hide();
+                    }
+                    if (oDivInput.length > 0) {
+                        oDivInput.hide();
+                    }
+                    if (oUiTabsBtn.length > 0) {
+                        oUiTabsBtn.hide();
+                    }
+                }
+                else {
+                    $(window).unbind("resize", reLayoutFS);
+                    if (oTabHead.length > 0) {
+                        if (!oTabHead.is(":visible")) {
+                            if (parent.setTabsPanelSize) {
+                                parent.setTabsPanelSize();
+                            }
+                        }
+                        oTabHead.show();
+                    }
+                    if (myLayout) {
+                        $(window).unbind("resize", setLayoutResize);
+                        if (!oLayoutResizer.is(":visible")) {
+                            myLayout.toggle("north");
+                            myLayout.toggle("west");
+                        }
+                        oLayoutWest.show();
+                        oLayoutNorth.show();
+                    }
+                    if (oDivWarp.length > 0) {
+                        oDivWarp.css("margin-top", 0);
+                    }
+                    if (oDivRight.length > 0) {
+                        oDivRight.show();
+                    }
+                    if (oAreaQuery.length > 0) {
+                        oAreaQuery.show();
+                    }
+                    if (oAreaQuery1.length > 0) {
+                        oAreaQuery1.show();
+                    }
+                    if (oAreaVender.length > 0) {
+                        oAreaVender.show();
+                    }
+                    if (oAreaTotal.length > 0) {
+                        oAreaTotal.show();
+                    }
+                    if (oDivInput.length > 0) {
+                        oDivInput.show();
+                    }
+                    if (oUiTabsBtn.length > 0) {
+                        oUiTabsBtn.show();
+                    }
+                }
+
+                oDgj.autoLoadlazyRow();
+                oDgj.setTableWidth();
+            }
+        };
+
+        if (typeof oDgj != "undefined") {
+            $(document).bind("keydown", function(e) {
+                e = FJ.fixE(e);
+                if ((e.keyCode == 38) && e.shiftKey) {
+                    oDgj.fnFullScreen();
+                }
+            });
+        }
+    }
+    /*if (typeof WINJ != "undefined") {
+        window.oWinjWareID = WINJ.imgbg({
+                    widthF: 245,
+                    heightF: 120,
+                    imgTitleSrc:FJ.getRootPath() + "/resources/themes/360buy/images/bip/titleIcon4.png",
+                    imgSize:{w:16,h:16},
+                    title: "查询商品信息",
+                    loadType: "iframe",
+                    bodyUrl: FJ.getRootPath() + "/ware/queryWareInfo.action",
+                    evts: {
+                        afterClose: function() {
+                            window.isShowWinWareID = false;
+                        }
+                    }
+                });
+
+        $(document).bind("keydown", function(e) {
+            e = FJ.fixE(e);
+            if ((e.keyCode == 81) && e.ctrlKey && !window.isShowWinWareID) {
+                oWinjWareID.show();
+                window.isShowWinWareID = true;
+            }
+        });
+
+    }*/
+
+});
+</script>
+$!resultMessage

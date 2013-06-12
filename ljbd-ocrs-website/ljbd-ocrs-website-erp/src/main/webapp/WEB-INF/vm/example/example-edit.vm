@@ -1,0 +1,45 @@
+
+<div class="breadcrumb">
+<p>接货管理 &gt; <a href="#">修改退货单</a></p>
+</div>
+
+<div class="r_content">
+
+
+
+
+<form action="#springUrl('')/return/order/$id" method="POST">
+<p>
+<label>退货单号</label>
+$id
+</p>
+<p>
+<label for="org">机构</label>
+#enumFormSingleSelect(${order.org}, 'org', '请选择', '')
+</p>
+<p>
+<label for="orderQty">订单数量</label>
+#springFormInput('order.orderQty', "") #springShowErrors('<br/>','')
+</p>
+<p>
+<label for="packageQty">包裹数量</label>
+#springFormInput('order.packageQty', "") #springShowErrors('<br/>','')
+</p>
+<p>
+<label for="returnTime">退货时间</label>
+<input class="easyui-datetimebox" required="true" type="text" id="returnTime" name="returnTime" value="#if($order.returnTime)$dateTool.format('yyyy-MM-dd', ${order.returnTime})#end"/>
+#springBind('order.returnTime') #springShowErrors('<br/>','')
+</p>
+
+<input name="_method" type="hidden" value="PUT" />
+<input type="submit" value="保存"/>
+<input type="button" value="删除" onclick="javascript:this.form['_method'].value='DELETE';this.form.submit();" />
+</ins>
+</form>
+
+
+</div>
+
+
+
+

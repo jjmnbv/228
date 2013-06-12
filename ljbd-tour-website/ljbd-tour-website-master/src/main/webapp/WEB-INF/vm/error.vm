@@ -1,0 +1,23 @@
+#* @vtlvariable name="exception" type="java.lang.Exception" *#
+<link rel="stylesheet" type="text/css" href="$assetModule.getTarget("/pop-ven/201007/skin/404.css")" media="all" />
+##$exception.message
+
+<div class="m_404">
+	<div class="error">
+        <h3>
+            #if($exception)
+                $!exception.printStackTrace()
+                #if($!exception.class.simpleName=="NoSuchMethodException")
+                    $!response.setStatus(404)
+                    404! 您请求的内容不存在
+                #elseif($!exception.message)
+                    出错了：  $!exception.message
+                #else
+                    出错了系统错误！
+                #end
+            #else
+                #showSimpleError()
+            #end
+        </h3>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>com.ljbd.ocrs.website</groupId>
+        <artifactId>ljbd-ocrs-website</artifactId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ljbd.ocrs.website.master</groupId>
+    <artifactId>ljbd-ocrs-website-master</artifactId>
+    <packaging>war</packaging>
+    <name>ljbd-ocrs-website-master</name>
+    <dependencies>
+        <dependency>
+            <groupId>com.ljbd.common.util</groupId>
+            <artifactId>ljbd-common-util</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ljbd.ocrs.rentalcar.common</groupId>
+            <artifactId>ljbd-ocrs-common</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>ljbd-ocrs-website-master</finalName>
+    </build>
+</project>

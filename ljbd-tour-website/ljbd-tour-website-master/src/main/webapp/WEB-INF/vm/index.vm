@@ -31,17 +31,17 @@
 
             //navSlider
             function navSlider(){
-                var nav = $('.nav')
-                var   cur = $('.nav li.cur a')
-                var   navLine = $('.nav-line')
-                var   anchor = $('a',nav.children())
-                var curPosL = cur.position().left
-                var curW = cur.outerWidth(true)
-                var curIdx = $('li.cur',$nav).index()
+                var nav = $('.nav');
+                var   cur = $('.nav li.cur a') ;
+                var   navLine = $('.nav-line') ;
+                var   anchor = $('a',nav.children()) ;
+                var curPosL = cur.position().left;
+                var curW = cur.outerWidth(true) ;
+                var curIdx = $('li.cur',nav).index()  ;
                     navLine.css({'width':curW,'left':curPosL});
                    anchor.each(function(index){
-                var posL = $(this).position().left
-                var w = $(this).outerWidth(true)
+                var posL = $(this).position().left ;
+                var w = $(this).outerWidth(true)   ;
                     $(this).mouseenter(function(){
                     navLine.animate({'width':w,'left':posL},250);
                     $(this).parent().addClass('cur').siblings().removeClass('cur');

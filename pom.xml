@@ -10,10 +10,10 @@
     <version>1.0</version>
     <modules>
         <module>ljbd-common</module>
-       <!-- <module>ocrs-rentalcar</module>
-        <module>ocrs-website</module>-->
-        <module>tour-maldives</module>
-        <module>tour-website</module>
+        <module>ljbd-ocrs</module>
+        <module>ljbd-ocrs-website</module>
+        <module>ljbd-tour</module>
+        <module>ljbd-tour-website</module>
     </modules>
     <name>ljbd</name>
     <properties>

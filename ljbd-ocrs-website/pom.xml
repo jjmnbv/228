@@ -8,17 +8,14 @@
         <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>ocrs</groupId>
-    <artifactId>ocrs-rentalcar</artifactId>
+
+    <groupId>com.ljbd.ocrs.website</groupId>
+    <artifactId>ljbd-ocrs-website</artifactId>
+    <version>1.0</version>
     <packaging>pom</packaging>
     <modules>
-        <module>ocrs-rentalcar-common</module>
-        <module>ocrs-rentalcar-dao</module>
-        <module>ocrs-rentalcar-domain</module>
-        <module>ocrs-rentalcar-facade</module>
-        <module>ocrs-rentalcar-manager</module>
-        <module>ocrs-rentalcar-service</module>
-        <module>ocrs-rentalcar-rpc</module>
+        <module>ljbd-ocrs-website-erp</module>
+        <module>ljbd-ocrs-website-master</module>
     </modules>
 
 

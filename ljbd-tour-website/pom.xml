@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>ljbd</artifactId>
@@ -8,14 +6,11 @@
         <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>ocrs</groupId>
-    <artifactId>ocrs-website</artifactId>
+    <groupId>com.ljbd.tour.website</groupId>
+    <artifactId>ljbd-tour-website</artifactId>
     <packaging>pom</packaging>
+    <name>ljbd-tour-website</name>
     <modules>
-        <module>ocrs-website-erp-web</module>
-        <module>ocrs-website-master-web</module>
+        <module>ljbd-tour-website-master</module>
     </modules>
-
-
 </project>

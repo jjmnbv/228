@@ -7,12 +7,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ljbd.tour.maldives</groupId>
-    <artifactId>tour-maldives</artifactId>
+    <groupId>com.ljbd.tour</groupId>
+    <artifactId>ljbd-tour</artifactId>
     <packaging>jar</packaging>
 
-    <name>tour-maldives</name>
-    <url>http://maven.apache.org</url>
+    <name>ljbd-tour</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

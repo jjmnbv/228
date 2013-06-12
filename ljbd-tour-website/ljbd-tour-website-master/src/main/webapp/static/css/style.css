@@ -1,0 +1,130 @@
+@charset "utf-8";
+
+/** BEGIN body **/
+#body {
+	width: 1000px;
+	margin:0 auto;/* 使body的div居中，auto是设置左右对外的边距自适应，所以div居中对齐 */
+	TEXT-ALIGN: center;/* 使body的text内容居中 */
+	padding-bottom: 20px;
+	font:12px/180% Arial, Helvetica, sans-serif , "新宋体";
+}
+/** END body **/
+
+/** BEGIN content **/
+#content {
+	margin: 10px 0 10px 0;
+	/*border: 1px solid #EDEDED;background:#FCFCFC;*/
+	width: 800px;
+	float: left;
+}
+
+#content img {
+	float: left;
+	margin: 5px;
+	border: 1px solid #EDEDED;
+}
+/** END content **/
+
+/** BEGIN sidebar **/
+#sidebar {
+	margin: 10px 0 10px 5px;
+	/*border: 1px solid #EDEDED;background:#FCFCFC;*/
+	width: 193px;
+	float: right;
+}
+/** END sidebar **/
+
+/** BEGIN imagesidebar **/
+.imagesidebar {border:solid 1px #ddd;padding:0 10px 0 10px;font:12px/180% Arial, Helvetica, sans-serif;margin:0 0 10px 0;}
+.imagesidebar li{list-style-type:none;position:relative;left:-35px;padding:0 0 10px 0;}
+.imagesidebar li span{margin-left:20px;}
+/* height:16px;line-height:16px;overflow:hidden;position:relative;left:-35px;padding:0 70px 0 30px;margin:0 0 10px 0; */
+/** END imagesidebar **/
+
+/* title */
+.tit{height:35px;line-height:15px;margin:0 5px;position:relative;border-bottom:2px solid #39aa42;}
+.tit h2{font-size:16px;color:#39aa42;float:left;margin-right:10px;}
+
+.subtit{height:35px;line-height:15px;margin:0 5px;position:relative;}
+.subtit h2{font-size:16px;color:#39aa42;float:left;margin-right:10px;}
+.subtit h2 a{color:#39aa42;position:relative;border-bottom:2px solid #39aa42;text-decoration: NONE;padding-bottom:5px;}
+.subtit h2 a:hover{color:#39aa42;position:relative;border-bottom:2px solid #39aa42;text-decoration: NONE;padding-bottom:5px;}
+
+/** BEGIN imagenav **/
+.wrapper{width:1000px;margin:0 auto;}
+/* focus */
+#focus{width:1000px;height:500px;overflow:hidden;position:relative;}
+#focus ul{height:580px;position:absolute;list-style:none;margin:0px;padding:0px;}
+#focus ul li{float:left;width:1000px;height:500px;overflow:hidden;position:relative;background:#000;list-style:none;}
+#focus ul li div{position:absolute;overflow:hidden;}
+#focus .btnBg{position:absolute;width:1000px;height:20px;left:0;bottom:0;background:#000;}
+#focus .btn{position:absolute;width:980px;height:10px;padding:5px 10px;right:0;bottom:0;text-align:right;}
+#focus .btn span{display:inline-block;_display:inline;_zoom:1;width:25px;height:10px;_font-size:0;margin-left:5px;cursor:pointer;background:#fff;}
+#focus .btn span.on{background:#fff;}
+#focus .preNext{width:45px;height:100px;position:absolute;top:190px;background:url(../images/sprite.png) no-repeat 0 0;cursor:pointer;}
+#focus .pre{left:0;}
+#focus .next{right:0;background-position:right top;}
+/** END imagenav **/
+
+/* advbox */
+.advbox{width:990px;margin:0 auto;}
+.advbox .dt_small{width:990px;}
+.advbox .dt_big{width:990px;}
+.advbox .dt_toBig{position:absolute;left:50%;margin:5px 0px 0px 440px;width:49px;height:21px;background:url("../images/public_showTL_1201.png");cursor:pointer;}
+.advbox .dt_toSmall{position:absolute;left:50%;margin:5px 0px 0px 440px;width:49px;height:21px;background:url("../images/public_closeTL_1201.png");cursor:pointer;}
+
+/* nav */
+/*.nav{position:relative;height:28px;width:1000px;margin:-10px auto 0 auto;}*/
+.nav{position:relative;height:38px;width:400px;margin:60px auto 0 auto;float:right;}
+.nav li{float:left;margin-left:9px;display:inline;height:26px;line-height:26px;}
+.nav li a{padding:0 8px;font-size:14px;color:#4f6f8c;font-weight:700;text-decoration:none;}
+.nav li a:hover{text-decoration:none;}
+/* 去掉last */
+/*.nav li.last a{font-weight:normal;font-size:12px;}*/
+.nav li.cur a{color:#39aa42;}
+.nav .nav-line{position:absolute;border-bottom:2px solid #39aa42;height:0;overflow:hidden;left:0;bottom:0;}
+
+
+/* top10 */
+.topbox dt,.topbox dt .num,.topbox dt.on{background-image:url(../images/TOPbg.png);background-repeat:no-repeat;}
+.topbox{height:550px;border:1px solid #ddd;}
+.topbox dt{padding:1px 16px 0 36px;background-position:0 0;height:28px;line-height:28px;overflow:hidden;position:relative;}
+.topbox dt .num{position:absolute;top:5px;left:5px;width:16px;height:16px;line-height:16px;overflow:hidden;font-size:12px;text-align:center;color:#fff;font-weight:800;background-position:-558px 0;display:block;}
+.topbox dt a{color:#333;text-decoration:none;color:#3366cc;}
+.topbox dt.on{background-position:-237px 0;}
+.topbox dd{border:solid 1px #fff;height:118px;overflow:hidden;}
+
+/* brand */
+.allbrand .brand{width:800px;height:225px;overflow:hidden;margin:5px 5px 5px 5px;}
+.allbrand .brand a{display:inline;position:relative;float:left;width:120px;height:70px;line-height:70px;text-align:center;color:#fff;font-size:14px;margin:0 6px 5px 0;}
+.allbrand .brand a img{position:absolute;left:10px;width:118px;height:68px;border:1px solid #e9e8e8;}
+.allbrand .brand a b{display:none;position:absolute;top:36px;left:10px;width:118px;height:0;background:#000;border:1px solid #e9e8e8;cursor:pointer;overflow:hidden;}
+
+/* tour information */
+.clear{display:block;overflow:hidden;clear:both;height:0;line-height:0;font-size:0;}
+
+.ranklist{border:solid 1px #ddd;padding:0 10px 0 10px;font:12px/180% Arial, Helvetica, sans-serif;margin:0 0 10px 0;}
+.ranklist li{height:16px;line-height:16px;overflow:hidden;position:relative;left:-35px;padding:0 70px 0 30px;margin:0 0 10px 0;}
+.ranklist li a,img{border:0;}
+.ranklist li a,a:visited{color:#5e5e5e; text-decoration:none;}
+.ranklist li a:hover{color:#b52725;text-decoration:underline;}
+.ranklist li em{background:url(../images/mun.gif) no-repeat;width:20px;height:16px;overflow:hidden;display:block;position:absolute;left:5px;top:0;text-align:center;font-style:normal;color:#333;}
+.ranklist li em{background-position:0 -16px;}
+.ranklist li.top em{background-position:0 0;color:#fff;}
+.ranklist li .num{position:absolute;right:0;top:0;color:#999;}
+
+/* image scroll */
+#shelf{width:1000px;height:210px;background:url("../images/shelf-bg.png") no-repeat scroll 0 -25px transparent;}
+.itemTitle{padding-top:30px;}
+
+#imagescroll{width:950px;height:200px;margin-left:25px;}
+#imagescroll img, #imagescroll .item{
+	width:100%;height:100%;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	-o-border-radius:10px;
+	border-radius:10px;
+	-moz-box-shadow:0px 5px 5px #777;
+	-webkit-box-shadow:0px 5px 5px #777;
+	box-shadow:0px 5px 5px #777;
+}

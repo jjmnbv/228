@@ -1,0 +1,14 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>com.ljbd.common</groupId>
+        <artifactId>ljbd-common</artifactId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ljbd.common.util</groupId>
+    <artifactId>ljbd-common-util</artifactId>
+     <version>${ljbd-version}</version>
+    <packaging>jar</packaging>
+    <name>ljbd-common-util</name>
+</project>

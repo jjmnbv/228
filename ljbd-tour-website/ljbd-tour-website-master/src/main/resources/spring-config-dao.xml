@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+    default-autowire="byName" default-lazy-init="false">
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="afsDataSource"/>
+    </bean>
+
+    <!-- Transaction manager for a single JDBC DataSource -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="afsDataSource"/>
+    </bean>
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="mapperLocations" value="classpath*:/sqlmap/mybatis/mysql/ExampleMapper.xml"/>
+        <property name="dataSource" ref="afsDataSource"/>
+    </bean>
+
+     <!-- Dao方法处理时间 -->
+    <bean id="daoTimeHandler" class="com.jd.bk.common.util.aop.TimeHandler"/>
+
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+        <property name="beanNames">
+            <value>*Dao</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>daoTimeHandler</value>
+            </list>
+        </property>
+    </bean>
+    <!-- component-scan自动搜索@Component , @Controller , @Service , @Repository等标注的类 -->
+	<context:component-scan base-package="com.juezhuo.ocrs.rentalcar.dao"/>
+
+
+</beans>

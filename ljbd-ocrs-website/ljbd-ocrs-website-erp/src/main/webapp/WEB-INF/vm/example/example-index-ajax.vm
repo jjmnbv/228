@@ -1,0 +1,68 @@
+#define($jsblock)
+<script type="text/javascript">
+$(function(){
+    $('#ordertable').datagrid({
+        width:900,
+        height:350,
+        nowrap: true,
+        striped: true,
+        collapsible:true,
+        url:'#springUrl('')/return/order/query.json',
+        method:'get',
+        sortName: 'returnTime',
+        sortOrder: 'desc',
+        remoteSort: true,
+        idField:'id',
+        frozenColumns:[[
+                    {field:'ck',checkbox:true},
+                    {field:'id',title:'退货单号',width:80}
+                ]],
+        columns:[[
+            {field:'orgId',title:'机构',width:90},
+            {field:'orderQty',title:'订单数量',width:90},
+            {field:'packageQty',title:'包裹数量',width:90},
+            {field:'order.returnTime',title:'退货时间',width:90},
+            {field:'order.operator',title:'退货操作人',width:90}
+        ]],
+        pagination:true,
+        rownumbers:true
+    });
+    
+    $('#batchdeleteForm').form({
+        onSubmit:function(){
+            getSelections();
+            return true;
+        }
+    });
+});
+function getSelected(){
+    var selected = $('#ordertable').datagrid('getSelected');
+    if (selected){
+        alert(selected.id);
+    }
+}
+function getSelections(){
+    var ids = [];
+    var rows = $('#ordertable').datagrid('getSelections');
+    for(var i=0;i<rows.length;i++){
+        ids.push(rows[i].id);
+    }
+    alert(ids.join(':'));
+}
+</script>
+#end
+
+
+
+<div class="breadcrumb">
+<p>接货管理 &gt; <a href="#">退货查询</a></p>
+</div>
+
+<div>
+<table id="ordertable"></table>
+</div>
+
+<form id="batchdeleteForm" action="#springUrl('')/return/order/batchdelete" method="POST">
+    <input type="submit" value="删除所选" />
+</form>
+

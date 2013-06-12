@@ -1,0 +1,32 @@
+
+<div class="breadcrumb">
+<p>接货管理 &gt; <a href="#">退货单详情</a></p>
+</div>
+
+<div class="r_content">
+
+<table width="100%" border="1">
+  <thead>
+    <td>#springMessage('return.order.col.id')</td>
+    <td>#springMessage('return.order.col.org')</td>
+    <td>#springMessage('return.order.col.orderQty')</td>
+    <td>#springMessage('return.order.col.packageQty')</td>
+    <td>#springMessage('return.order.col.returnTime')</td>
+    <td>#springMessage('return.order.col.operator')</td>
+  </thead>
+  <tr>
+    <td>${order.id}</td>
+    <td>#enumMessage(${order.org})</td>
+    <td>${order.orderQty}</td>
+    <td>${order.packageQty}</td>
+    <td>$dateTool.format('yyyy-MM-dd HH:mm:ss', ${order.returnTime})</td>
+    <td>${order.operator}</td>
+  </tr>
+
+</table>
+
+</div>
+
+
+
+

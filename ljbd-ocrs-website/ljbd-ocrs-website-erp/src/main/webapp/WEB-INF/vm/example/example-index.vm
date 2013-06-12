@@ -1,0 +1,187 @@
+#define($jsblock)
+<!--分页js -->
+<script type="text/javascript" src="#springUrl('')/widgets/simpletable/simpletable.js""></script>
+ <script type="text/javascript" >
+  $(function () {
+            var oEp = $("#eastPanel");
+            if (oEp.length > 0) {
+                oEp.show();
+            }
+
+            window.myLayout = $(document.body).layout({   //borderlayout
+                defaults: {},
+                east: {
+                    size: 180,
+                    spacing_closed: 15,
+                    spacing_open: 0
+                }
+            });
+
+            //动态计算导航tab宽度
+            (window.reLayout = function () {
+                var h = $("body").height() - 34, h2 = $("body").height() - 190;
+                $("#eastPanelBg2").height(h);
+                $("#area_table").height(h2);
+            })();
+            $(window).bind("resize", function () {
+                reLayout();
+            });
+			// 分页需要依赖的初始化动作
+		/*	window.simpleTable = new SimpleTable('queryForm',$page.thisPageNumber,$page.pageSize,"id");*/
+
+            //弹出页面
+         window.oWinjAdd = WINJ.imgbg({
+                 widthF: 600,
+                 heightF: 360,
+                 imgTitleSrc: "#springUrl('')/resources/themes/360buy/images/vbm/pop-up/title_icon2.png",
+                 imgSize: { w: 16, h: 16 },
+                 title: "增加用户",
+                 loadType: "iframe",
+                 bodyUrl: "/example/new"
+             });
+
+             window.showWindow = function (p) {
+                 switch (p) {
+                     case 1:
+                         window.oWinj = oWinjAdd.show();
+                         break;
+                    
+                 }
+             };
+            
+      })
+</script>
+ #end
+#define($cssblock )
+    <style type="text/css">
+        body { margin-bottom: 5px; }
+        #area_query { height: 120px; }
+        .mtable { width: 802px; height: 80px; }
+        .mtable_U { width: 792px; height: 5px; }
+        .mtable_L { width: 5px; height: 80px; }
+        .mtable_C { width: 792px; height: 80px; }
+        .mtable_R { width: 5px; height: 80px; }
+        .mtable_D { width: 792px; height: 6px; }
+    </style>
+ #end
+
+<form  id ="queryForm" action="#springUrl('/example/query')" method="GET">
+  <div class="ui-layout-east" id="left">
+        <div id="eastPanel">
+            <div id="eastPanel1">
+                <input id="btnEast1" no="1" class="btnEast btnEast1_down pngfix" type="button" value="" />
+            </div>
+            <div id="eastPanel2">
+                <div id="eastPanelBg1">
+                </div>
+                <div id="eastPanelBg2">
+                    <ul>
+                        <li style="background-image: url(/static/themes/ocrs/images/vbm/sider/btn_save.png);">
+                            <a href="javascript:void(0)" style="color: #086D9C;">保&nbsp;存</a></li>
+                        <li style="background-image: url(/static/themes/ocrs/images/vbm/sider/btn_add.png);">
+                            <a href="javascript:showWindow(1)" style="color: #086D9C;">添&nbsp;加</a></li>
+                    </ul>
+                </div>
+                <div id="eastPanelBg3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui-layout-center" id="ui-layout-centerC" style="overflow: hidden;">
+<div id="area_query">
+            <div class="mtable">
+                <div class="mtableu">
+                    <div class="mtable_LU">
+                    </div>
+                    <div class="mtable_U">
+                    </div>
+                    <div class="mtable_RU">
+                    </div>
+                </div>
+                <div class="mtablec">
+                    <div class="mtable_L">
+                    </div>
+                    <div class="mtable_C">
+
+                        <table class="table_query" >
+                            <tr>
+                                <td style="text-align:right;width:90px;height:30px;">
+                                    #springMessage('Example.id')：
+                                </td>
+                                <td>
+                                   #springFormInput('query.id')
+                                </td>
+                                <td style="text-align:right;width:140px;">
+                                  #springMessage('Example.name')：
+                                </td>
+                                <td>
+                                     #springFormInput('query.name')
+                                </td>
+                                <td style="text-align:right;width:70px;">
+                                    #springMessage('Example.email')：
+                                </td>
+                                <td>
+                                    #springFormInput('query.email')
+                                </td>
+                                
+                            </tr>
+
+                        </table>
+
+                    </div>
+                    <div class="mtable_R">
+                    </div>
+                </div>
+                <div class="mtabled">
+                    <div class="mtable_LD">
+                    </div>
+                    <div class="mtable_D">
+                    </div>
+                    <div class="mtable_RD">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+ <div id="area_table" class="gridTable">
+      
+<table  class="table_common">
+  <thead>
+    <th>#springMessage('Example.id')</th>
+    <th>#springMessage('Example.name')</th>
+    <th>#springMessage('Example.email')</th>
+    <th>#springMessage('Example.yn')</th>
+    <th>#springMessage('Example.creatTime')</th>
+    <th>#springMessage('Example.updateTime')</th>
+    <th>#springMessage('command.operator')</th>
+  </thead>
+    <tbody>
+#if($page.totalCount > 0)
+    #foreach($example in $page.result)
+  <tr #if ($loopCounter %2 == 0) class="table_odd" #else class="table_even" #end >
+    <td>${example.id}</td>
+    <td>${example.name}</td>
+    <td>${example.email}</td>
+    <td>${example.yn}</td>
+    <td>$dateTool.format('yyyy-MM-dd HH:mm:ss', ${example.creatTime})</td>
+    <td>$dateTool.format('yyyy-MM-dd HH:mm:ss', ${example.updateTime})</td>
+    <td><a href="#springUrl('')/example/${example.id}">#springMessage('command.view')</a> <a href="#springUrl('')/example/${example.id}/edit">#springMessage('command.edit')</a></td>
+  </tr>
+#end
+       #else
+            <tr>
+                <td colspan="6" align="center">没有符合的记录</td>
+            </tr>
+        #end
+   </tbody>
+</table>
+</div>
+  </div>
+#if($page.result)
+<div class="pages">
+        #pageToolBar($page)
+</div>   
+
+#end
+</form>
+

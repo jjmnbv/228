@@ -1,4 +1,4 @@
-package com.ljbd.common.util.springmvc;
+package com.ljbd.common.support;
 
 import cn.org.rapid_framework.beanutils.converter.StringConverter;
 import org.apache.commons.beanutils.ConvertUtils;

@@ -1,4 +1,4 @@
-package com.ljbd.common.support.domain;
+package com.ljbd.common.support;
 
 import cn.org.rapid_framework.page.PageRequest;
 

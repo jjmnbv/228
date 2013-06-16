@@ -18,12 +18,10 @@
     </bean>
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="mapperLocations" value="classpath*:/sqlmap/mybatis/mysql/ExampleMapper.xml"/>
+        <property name="mapperLocations" value="classpath*:/mapper/*Mapper.xml"/>
         <property name="dataSource" ref="afsDataSource"/>
     </bean>
 
-     <!-- Dao方法处理时间 -->
-    <bean id="daoTimeHandler" class="com.jd.bk.common.util.aop.TimeHandler"/>
 
     <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
         <property name="beanNames">
@@ -36,7 +34,7 @@
         </property>
     </bean>
     <!-- component-scan自动搜索@Component , @Controller , @Service , @Repository等标注的类 -->
-	<context:component-scan base-package="com.juezhuo.ocrs.rentalcar.dao"/>
+    <context:component-scan base-package="com.ljbd.tour.maldives.dao" />
 
 
 </beans>

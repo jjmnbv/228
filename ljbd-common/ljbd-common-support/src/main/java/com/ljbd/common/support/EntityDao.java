@@ -1,4 +1,4 @@
-package com.ljbd.common.support.dao;
+package com.ljbd.common.support;
 
 import org.springframework.dao.DataAccessException;
 

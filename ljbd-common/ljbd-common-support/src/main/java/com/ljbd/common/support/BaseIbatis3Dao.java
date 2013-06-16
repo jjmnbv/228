@@ -1,4 +1,4 @@
-package com.ljbd.common.support.dao;
+package com.ljbd.common.support;
 
 import cn.org.rapid_framework.beanutils.PropertyUtils;
 import cn.org.rapid_framework.page.Page;
@@ -22,7 +22,7 @@ import java.util.Map;
  * @author badqiu
  * @version 1.0
  */
-public abstract class BaseIbatis3Dao<E,PK extends Serializable> extends DaoSupport {
+public abstract class BaseIbatis3Dao<E,PK extends Serializable> extends DaoSupport  implements EntityDao<E,PK> {
     protected final Log log = LogFactory.getLog(getClass());
 
     private SqlSessionFactory sqlSessionFactory;

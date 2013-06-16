@@ -13,4 +13,16 @@
     <build>
         <finalName>ljbd-tour-website-master</finalName>
     </build>
+    <dependencies>
+        <dependency>
+            <groupId>ljbd</groupId>
+            <artifactId>ljbd-common-support</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ljbd.tour.maldives</groupId>
+            <artifactId>ljbd-tour-maldives</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
 </project>

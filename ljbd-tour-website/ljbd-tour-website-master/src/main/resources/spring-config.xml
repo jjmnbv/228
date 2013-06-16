@@ -14,9 +14,9 @@
     <context:property-placeholder location="classpath*:important.properties,classpath*:profile.properties" />
 
     <!-- 数据源导入 -->
-<!--    <import resource="spring-config-datasource-dbcp.xml"/>
+    <import resource="spring-config-datasource-dbcp.xml"/>
     <import resource="spring-config-dao.xml"/>
     <import resource="spring-config-manager.xml"/>
-    <import resource="spring-config-service.xml"/>-->
+    <import resource="spring-config-service.xml"/>
 
 </beans>

@@ -73,12 +73,7 @@
             <artifactId>jackson-mapper-asl</artifactId>
             <version>${jackson.version}</version>
         </dependency>
-        <!--项目脚手架-->
-        <dependency>
-            <groupId>com.googlecode.rapid-framework</groupId>
-            <artifactId>rapid-core</artifactId>
-            <version>3.9.3</version>
-        </dependency>
+
         <!--数据库-->
         <dependency>
             <groupId>mysql</groupId>

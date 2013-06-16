@@ -1,6 +1,6 @@
-package com.ljbd.common.support.manager.impl;
+package com.ljbd.common.support;
 
-import com.ljbd.common.support.dao.EntityDao;
+import com.ljbd.common.support.EntityDao;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.dao.DataAccessException;

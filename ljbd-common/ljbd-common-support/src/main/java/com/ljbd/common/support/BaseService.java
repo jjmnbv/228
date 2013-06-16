@@ -1,4 +1,4 @@
-package com.ljbd.common.support.facade;
+package com.ljbd.common.support;
 
 import java.io.Serializable;
 import java.util.List;

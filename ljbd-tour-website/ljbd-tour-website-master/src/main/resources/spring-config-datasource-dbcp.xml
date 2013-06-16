@@ -11,10 +11,10 @@
 	<!-- 数据源定义 -->
 
     <bean id="afsDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="${afs.mysql.jdbc.driver}"/>
-        <property name="url" value="${afs.jdbc.url}"/>
-        <property name="username" value="${afs.jdbc.username}"/>
-        <property name="password" value="${afs.jdbc.password}"/>
+        <property name="driverClassName" value="${ljbd.tour.mysql.jdbc.driver}"/>
+        <property name="url" value="${ljbd.tour.jdbc.url}"/>
+        <property name="username" value="${ljbd.tour.jdbc.username}"/>
+        <property name="password" value="${ljbd.tour.jdbc.password}"/>
     </bean>
 
 

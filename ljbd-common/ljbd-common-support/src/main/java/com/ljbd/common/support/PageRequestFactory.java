@@ -1,8 +1,8 @@
-package com.ljbd.common.util.springmvc;
+package com.ljbd.common.support;
 
 
 import cn.org.rapid_framework.page.PageRequest;
-import com.ljbd.common.util.base.BaseQuery;
+import com.ljbd.common.support.BaseQuery;
 import org.apache.commons.beanutils.BeanUtilsBean;
 import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.util.WebUtils;

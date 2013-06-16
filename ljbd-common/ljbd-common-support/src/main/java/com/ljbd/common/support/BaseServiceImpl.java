@@ -1,7 +1,5 @@
-package com.ljbd.common.support.service;
+package com.ljbd.common.support;
 
-import com.ljbd.common.support.facade.BaseService;
-import com.ljbd.common.support.manager.BaseManager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +14,7 @@ import java.util.List;
 public abstract class BaseServiceImpl<E, PK extends Serializable> implements BaseService<E, PK> {
     protected Log log = LogFactory.getLog(getClass());
 
-    protected abstract BaseManager getBaseManager();
+    protected abstract BaseManagerImpl getBaseManager();
 
 
     public E getById(PK id) {

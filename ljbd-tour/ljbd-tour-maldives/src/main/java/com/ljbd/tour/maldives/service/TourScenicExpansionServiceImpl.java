@@ -1,0 +1,16 @@
+package com.ljbd.tour.maldives.service;
+import com.ljbd.tour.maldives.facade.TourScenicExpansionService;
+import com.ljbd.tour.maldives.manager.TourScenicExpansionManager;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import javax.annotation.Resource;
+@Service
+public class TourScenicExpansionServiceImpl implements TourScenicExpansionService{
+    @Resource
+	private TourScenicExpansionManager tourScenicExpansionManager;
+	/**增加setXXXX()方法,spring就可以通过autowire自动设置对象属性,请注意大小写*/
+	public void setTourScenicExpansionManager(TourScenicExpansionManager manager) {
+		this.tourScenicExpansionManager = manager;
+	}
+
+}

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+
+<!-- 不使用namespace的话sql搜索定位会比较方便 -->
+<mapper namespace="TourMetadata">
+
+	<resultMap id="RM.TourMetadata" type="com.ljbd.tour.maldives.model.TourMetadata">
+        <result property="id" column="id"/>
+        <result property="metadataGroup" column="metadata_group"/>
+        <result property="metadataKeyI" column="metadata_key_i"/>
+        <result property="metadataKeyIi" column="metadata_key_ii"/>
+        <result property="metadataKeyIii" column="metadata_key_iii"/>
+        <result property="metadataKeyIv" column="metadata_key_iv"/>
+        <result property="metadataValue" column="metadata_value"/>
+        <result property="metadataValueName" column="metadata_value_name"/>
+        <result property="metadataRemark" column="metadata_remark"/>
+        <result property="createDate" column="create_date"/>
+        <result property="createName" column="create_name"/>
+        <result property="updateDate" column="update_date"/>
+        <result property="updateName" column="update_name"/>
+        <result property="sysVersion" column="sys_version"/>
+        <result property="yn" column="yn"/>
+	</resultMap>
+	
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="TourMetadata.columns">
+	    <![CDATA[
+		id,metadata_group,metadata_key_i,metadata_key_ii,metadata_key_iii,metadata_key_iv,metadata_value,metadata_value_name,metadata_remark,create_date,create_name,update_date,update_name,sys_version,yn
+	    ]]>
+	</sql>
+
+	<!-- useGeneratedKeys="true" keyProperty="xxx" for sqlserver and mysql -->
+	<insert id="TourMetadata.insert" useGeneratedKeys="true" keyProperty="id">
+    <![CDATA[
+        INSERT INTO tour_metadata (
+        	id ,
+        	metadata_group ,
+        	metadata_key_i ,
+        	metadata_key_ii ,
+        	metadata_key_iii ,
+        	metadata_key_iv ,
+        	metadata_value ,
+        	metadata_value_name ,
+        	metadata_remark ,
+        	create_date ,
+        	create_name ,
+        	update_date ,
+        	update_name ,
+        	sys_version ,
+        	yn 
+        ) VALUES (
+        	#{id} ,
+        	#{metadataGroup} ,
+        	#{metadataKeyI} ,
+        	#{metadataKeyIi} ,
+        	#{metadataKeyIii} ,
+        	#{metadataKeyIv} ,
+        	#{metadataValue} ,
+        	#{metadataValueName} ,
+        	#{metadataRemark} ,
+        	#{createDate} ,
+        	#{createName} ,
+        	#{updateDate} ,
+        	#{updateName} ,
+        	#{sysVersion} ,
+        	#{yn} 
+        )
+    ]]>
+		<!--	
+			oracle: order="BEFORE" SELECT sequenceName.nextval AS ID FROM DUAL 
+			DB2: order="BEFORE"" values nextval for sequenceName
+		<selectKey resultType="java.lang.Long" order="BEFORE" keyProperty="userId">
+			SELECT sequenceName.nextval AS ID FROM DUAL 
+        </selectKey>
+		-->
+	</insert>
+    
+	<update id="TourMetadata.update" >
+    <![CDATA[
+        UPDATE tour_metadata SET
+	        metadata_group = #{metadataGroup} ,
+	        metadata_key_i = #{metadataKeyI} ,
+	        metadata_key_ii = #{metadataKeyIi} ,
+	        metadata_key_iii = #{metadataKeyIii} ,
+	        metadata_key_iv = #{metadataKeyIv} ,
+	        metadata_value = #{metadataValue} ,
+	        metadata_value_name = #{metadataValueName} ,
+	        metadata_remark = #{metadataRemark} ,
+	        create_date = #{createDate} ,
+	        create_name = #{createName} ,
+	        update_date = #{updateDate} ,
+	        update_name = #{updateName} ,
+	        sys_version = #{sysVersion} ,
+	        yn = #{yn} 
+        WHERE 
+	        id = #{id} 
+    ]]>
+	</update>
+
+    <delete id="TourMetadata.delete">
+    <![CDATA[
+        DELETE FROM tour_metadata WHERE
+        id = #{id} 
+    ]]>
+    </delete>
+    
+    <select id="TourMetadata.getById" resultMap="RM.TourMetadata">
+		SELECT <include refid="TourMetadata.columns" />
+	    <![CDATA[
+		    FROM tour_metadata 
+	        WHERE 
+		        id = #{id} 
+	    ]]>
+	</select>
+	
+	<sql id="TourMetadata.findPage.where">
+		<!-- ognl访问静态方法的表达式 为@class@method(args),以下为调用rapid中的Ognl.isNotEmpty()方法,还有其它方法如isNotBlank()可以使用，具体请查看Ognl类 -->
+		<where>	      				
+	       <if test="@Ognl@isNotEmpty(id)">
+				AND id = #{id}
+			</if>
+	       <if test="@Ognl@isNotEmpty(metadataGroup)">
+				AND metadata_group = #{metadataGroup}
+			</if>
+	       <if test="@Ognl@isNotEmpty(metadataKeyI)">
+				AND metadata_key_i = #{metadataKeyI}
+			</if>
+	       <if test="@Ognl@isNotEmpty(metadataKeyIi)">
+				AND metadata_key_ii = #{metadataKeyIi}
+			</if>
+	       <if test="@Ognl@isNotEmpty(metadataKeyIii)">
+				AND metadata_key_iii = #{metadataKeyIii}
+			</if>
+	       <if test="@Ognl@isNotEmpty(metadataKeyIv)">
+				AND metadata_key_iv = #{metadataKeyIv}
+			</if>
+	       <if test="@Ognl@isNotEmpty(metadataValue)">
+				AND metadata_value = #{metadataValue}
+			</if>
+	       <if test="@Ognl@isNotEmpty(metadataValueName)">
+				AND metadata_value_name = #{metadataValueName}
+			</if>
+	       <if test="@Ognl@isNotEmpty(metadataRemark)">
+				AND metadata_remark = #{metadataRemark}
+			</if>
+	       <if test="@Ognl@isNotEmpty(createDateBegin)">
+				AND create_date >= #{createDateBegin}
+		   </if>
+		   <if test="@Ognl@isNotEmpty(createDateEnd)">
+				AND create_date &lt;= #{createDateEnd}
+		   </if>
+	       <if test="@Ognl@isNotEmpty(createName)">
+				AND create_name = #{createName}
+			</if>
+	       <if test="@Ognl@isNotEmpty(updateDateBegin)">
+				AND update_date >= #{updateDateBegin}
+		   </if>
+		   <if test="@Ognl@isNotEmpty(updateDateEnd)">
+				AND update_date &lt;= #{updateDateEnd}
+		   </if>
+	       <if test="@Ognl@isNotEmpty(updateName)">
+				AND update_name = #{updateName}
+			</if>
+	       <if test="@Ognl@isNotEmpty(sysVersion)">
+				AND sys_version = #{sysVersion}
+			</if>
+	       <if test="@Ognl@isNotEmpty(yn)">
+				AND yn = #{yn}
+			</if>
+		</where>
+	</sql>
+		
+    <select id="TourMetadata.findPage.count" resultType="long">
+        SELECT count(*) FROM tour_metadata 
+		<include refid="TourMetadata.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 offset,pageSize,lastRows 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="TourMetadata.findPage" resultMap="RM.TourMetadata">
+    	SELECT <include refid="TourMetadata.columns" />
+	    FROM tour_metadata 
+		<include refid="TourMetadata.findPage.where"/>
+		
+		<if test="@Ognl@isNotEmpty(sortColumns)">
+			ORDER BY ${sortColumns}
+		</if>
+    </select>
+
+	
+</mapper>
+

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+
+<!-- 不使用namespace的话sql搜索定位会比较方便 -->
+<mapper namespace="TourStrokeMaldives">
+
+	<resultMap id="RM.TourStrokeMaldives" type="com.ljbd.tour.maldives.model.TourStrokeMaldives">
+        <result property="id" column="id"/>
+        <result property="tourProductId" column="tour_product_id"/>
+        <result property="departure" column="departure"/>
+        <result property="destination" column="destination"/>
+        <result property="tpn" column="tpn"/>
+        <result property="duration" column="duration"/>
+        <result property="traffic" column="traffic"/>
+        <result property="tourScenicId" column="tour_scenic_id"/>
+        <result property="scenicName" column="scenic_name"/>
+        <result property="tourHotelId" column="tour_hotel_id"/>
+        <result property="hotelName" column="hotel_name"/>
+        <result property="room" column="room"/>
+        <result property="capacity" column="capacity"/>
+        <result property="breakfast" column="breakfast"/>
+        <result property="bedType" column="bed_type"/>
+        <result property="broadband" column="broadband"/>
+        <result property="dining" column="dining"/>
+        <result property="relatedAttractions" column="related_attractions"/>
+        <result property="description" column="description"/>
+        <result property="createDate" column="create_date"/>
+        <result property="createName" column="create_name"/>
+        <result property="updateDate" column="update_date"/>
+        <result property="updateName" column="update_name"/>
+        <result property="sysVersion" column="sys_version"/>
+        <result property="yn" column="yn"/>
+	</resultMap>
+	
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="TourStrokeMaldives.columns">
+	    <![CDATA[
+		id,tour_product_id,departure,destination,tpn,duration,traffic,tour_scenic_id,scenic_name,tour_hotel_id,hotel_name,room,capacity,breakfast,bed_type,broadband,dining,related_attractions,description,create_date,create_name,update_date,update_name,sys_version,yn
+	    ]]>
+	</sql>
+
+	<!-- useGeneratedKeys="true" keyProperty="xxx" for sqlserver and mysql -->
+	<insert id="TourStrokeMaldives.insert" useGeneratedKeys="true" keyProperty="id">
+    <![CDATA[
+        INSERT INTO tour_stroke_maldives (
+        	id ,
+        	tour_product_id ,
+        	departure ,
+        	destination ,
+        	tpn ,
+        	duration ,
+        	traffic ,
+        	tour_scenic_id ,
+        	scenic_name ,
+        	tour_hotel_id ,
+        	hotel_name ,
+        	room ,
+        	capacity ,
+        	breakfast ,
+        	bed_type ,
+        	broadband ,
+        	dining ,
+        	related_attractions ,
+        	description ,
+        	create_date ,
+        	create_name ,
+        	update_date ,
+        	update_name ,
+        	sys_version ,
+        	yn 
+        ) VALUES (
+        	#{id} ,
+        	#{tourProductId} ,
+        	#{departure} ,
+        	#{destination} ,
+        	#{tpn} ,
+        	#{duration} ,
+        	#{traffic} ,
+        	#{tourScenicId} ,
+        	#{scenicName} ,
+        	#{tourHotelId} ,
+        	#{hotelName} ,
+        	#{room} ,
+        	#{capacity} ,
+        	#{breakfast} ,
+        	#{bedType} ,
+        	#{broadband} ,
+        	#{dining} ,
+        	#{relatedAttractions} ,
+        	#{description} ,
+        	#{createDate} ,
+        	#{createName} ,
+        	#{updateDate} ,
+        	#{updateName} ,
+        	#{sysVersion} ,
+        	#{yn} 
+        )
+    ]]>
+		<!--	
+			oracle: order="BEFORE" SELECT sequenceName.nextval AS ID FROM DUAL 
+			DB2: order="BEFORE"" values nextval for sequenceName
+		<selectKey resultType="java.lang.Long" order="BEFORE" keyProperty="userId">
+			SELECT sequenceName.nextval AS ID FROM DUAL 
+        </selectKey>
+		-->
+	</insert>
+    
+	<update id="TourStrokeMaldives.update" >
+    <![CDATA[
+        UPDATE tour_stroke_maldives SET
+	        tour_product_id = #{tourProductId} ,
+	        departure = #{departure} ,
+	        destination = #{destination} ,
+	        tpn = #{tpn} ,
+	        duration = #{duration} ,
+	        traffic = #{traffic} ,
+	        tour_scenic_id = #{tourScenicId} ,
+	        scenic_name = #{scenicName} ,
+	        tour_hotel_id = #{tourHotelId} ,
+	        hotel_name = #{hotelName} ,
+	        room = #{room} ,
+	        capacity = #{capacity} ,
+	        breakfast = #{breakfast} ,
+	        bed_type = #{bedType} ,
+	        broadband = #{broadband} ,
+	        dining = #{dining} ,
+	        related_attractions = #{relatedAttractions} ,
+	        description = #{description} ,
+	        create_date = #{createDate} ,
+	        create_name = #{createName} ,
+	        update_date = #{updateDate} ,
+	        update_name = #{updateName} ,
+	        sys_version = #{sysVersion} ,
+	        yn = #{yn} 
+        WHERE 
+	        id = #{id} 
+    ]]>
+	</update>
+
+    <delete id="TourStrokeMaldives.delete">
+    <![CDATA[
+        DELETE FROM tour_stroke_maldives WHERE
+        id = #{id} 
+    ]]>
+    </delete>
+    
+    <select id="TourStrokeMaldives.getById" resultMap="RM.TourStrokeMaldives">
+		SELECT <include refid="TourStrokeMaldives.columns" />
+	    <![CDATA[
+		    FROM tour_stroke_maldives 
+	        WHERE 
+		        id = #{id} 
+	    ]]>
+	</select>
+	
+	<sql id="TourStrokeMaldives.findPage.where">
+		<!-- ognl访问静态方法的表达式 为@class@method(args),以下为调用rapid中的Ognl.isNotEmpty()方法,还有其它方法如isNotBlank()可以使用，具体请查看Ognl类 -->
+		<where>	      				
+	       <if test="@Ognl@isNotEmpty(id)">
+				AND id = #{id}
+			</if>
+	       <if test="@Ognl@isNotEmpty(tourProductId)">
+				AND tour_product_id = #{tourProductId}
+			</if>
+	       <if test="@Ognl@isNotEmpty(departure)">
+				AND departure = #{departure}
+			</if>
+	       <if test="@Ognl@isNotEmpty(destination)">
+				AND destination = #{destination}
+			</if>
+	       <if test="@Ognl@isNotEmpty(tpn)">
+				AND tpn = #{tpn}
+			</if>
+	       <if test="@Ognl@isNotEmpty(duration)">
+				AND duration = #{duration}
+			</if>
+	       <if test="@Ognl@isNotEmpty(traffic)">
+				AND traffic = #{traffic}
+			</if>
+	       <if test="@Ognl@isNotEmpty(tourScenicId)">
+				AND tour_scenic_id = #{tourScenicId}
+			</if>
+	       <if test="@Ognl@isNotEmpty(scenicName)">
+				AND scenic_name = #{scenicName}
+			</if>
+	       <if test="@Ognl@isNotEmpty(tourHotelId)">
+				AND tour_hotel_id = #{tourHotelId}
+			</if>
+	       <if test="@Ognl@isNotEmpty(hotelName)">
+				AND hotel_name = #{hotelName}
+			</if>
+	       <if test="@Ognl@isNotEmpty(room)">
+				AND room = #{room}
+			</if>
+	       <if test="@Ognl@isNotEmpty(capacity)">
+				AND capacity = #{capacity}
+			</if>
+	       <if test="@Ognl@isNotEmpty(breakfast)">
+				AND breakfast = #{breakfast}
+			</if>
+	       <if test="@Ognl@isNotEmpty(bedType)">
+				AND bed_type = #{bedType}
+			</if>
+	       <if test="@Ognl@isNotEmpty(broadband)">
+				AND broadband = #{broadband}
+			</if>
+	       <if test="@Ognl@isNotEmpty(dining)">
+				AND dining = #{dining}
+			</if>
+	       <if test="@Ognl@isNotEmpty(relatedAttractions)">
+				AND related_attractions = #{relatedAttractions}
+			</if>
+	       <if test="@Ognl@isNotEmpty(description)">
+				AND description = #{description}
+			</if>
+	       <if test="@Ognl@isNotEmpty(createDateBegin)">
+				AND create_date >= #{createDateBegin}
+		   </if>
+		   <if test="@Ognl@isNotEmpty(createDateEnd)">
+				AND create_date &lt;= #{createDateEnd}
+		   </if>
+	       <if test="@Ognl@isNotEmpty(createName)">
+				AND create_name = #{createName}
+			</if>
+	       <if test="@Ognl@isNotEmpty(updateDateBegin)">
+				AND update_date >= #{updateDateBegin}
+		   </if>
+		   <if test="@Ognl@isNotEmpty(updateDateEnd)">
+				AND update_date &lt;= #{updateDateEnd}
+		   </if>
+	       <if test="@Ognl@isNotEmpty(updateName)">
+				AND update_name = #{updateName}
+			</if>
+	       <if test="@Ognl@isNotEmpty(sysVersion)">
+				AND sys_version = #{sysVersion}
+			</if>
+	       <if test="@Ognl@isNotEmpty(yn)">
+				AND yn = #{yn}
+			</if>
+		</where>
+	</sql>
+		
+    <select id="TourStrokeMaldives.findPage.count" resultType="long">
+        SELECT count(*) FROM tour_stroke_maldives 
+		<include refid="TourStrokeMaldives.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 offset,pageSize,lastRows 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="TourStrokeMaldives.findPage" resultMap="RM.TourStrokeMaldives">
+    	SELECT <include refid="TourStrokeMaldives.columns" />
+	    FROM tour_stroke_maldives 
+		<include refid="TourStrokeMaldives.findPage.where"/>
+		
+		<if test="@Ognl@isNotEmpty(sortColumns)">
+			ORDER BY ${sortColumns}
+		</if>
+    </select>
+
+	
+</mapper>
+

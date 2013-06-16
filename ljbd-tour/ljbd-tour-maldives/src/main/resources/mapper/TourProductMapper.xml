@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+
+<!-- 不使用namespace的话sql搜索定位会比较方便 -->
+<mapper namespace="TourProduct">
+
+	<resultMap id="RM.TourProduct" type="com.ljbd.tour.maldives.model.TourProduct">
+        <result property="id" column="id"/>
+        <result property="status" column="status"/>
+        <result property="title" column="title"/>
+        <result property="subtitle" column="subtitle"/>
+        <result property="summary" column="summary"/>
+        <result property="categoryI" column="category_i"/>
+        <result property="categoryIi" column="category_ii"/>
+        <result property="categoryIii" column="category_iii"/>
+        <result property="categoryIv" column="category_iv"/>
+        <result property="supplier" column="supplier"/>
+        <result property="purchasePrice" column="purchase_price"/>
+        <result property="sellingPrice" column="selling_price"/>
+        <result property="travelDays" column="travel_days"/>
+        <result property="traffic" column="traffic"/>
+        <result property="satisfaction" column="satisfaction"/>
+        <result property="evaluate" column="evaluate"/>
+        <result property="remark" column="remark"/>
+        <result property="mainPush" column="main_push"/>
+        <result property="createDate" column="create_date"/>
+        <result property="createName" column="create_name"/>
+        <result property="updateDate" column="update_date"/>
+        <result property="updateName" column="update_name"/>
+        <result property="sysVersion" column="sys_version"/>
+        <result property="yn" column="yn"/>
+	</resultMap>
+	
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="TourProduct.columns">
+	    <![CDATA[
+		id,status,title,subtitle,summary,category_i,category_ii,category_iii,category_iv,supplier,purchase_price,selling_price,travel_days,traffic,satisfaction,evaluate,remark,main_push,create_date,create_name,update_date,update_name,sys_version,yn
+	    ]]>
+	</sql>
+
+	<!-- useGeneratedKeys="true" keyProperty="xxx" for sqlserver and mysql -->
+	<insert id="TourProduct.insert" useGeneratedKeys="true" keyProperty="id">
+    <![CDATA[
+        INSERT INTO tour_product (
+        	id ,
+        	status ,
+        	title ,
+        	subtitle ,
+        	summary ,
+        	category_i ,
+        	category_ii ,
+        	category_iii ,
+        	category_iv ,
+        	supplier ,
+        	purchase_price ,
+        	selling_price ,
+        	travel_days ,
+        	traffic ,
+        	satisfaction ,
+        	evaluate ,
+        	remark ,
+        	main_push ,
+        	create_date ,
+        	create_name ,
+        	update_date ,
+        	update_name ,
+        	sys_version ,
+        	yn 
+        ) VALUES (
+        	#{id} ,
+        	#{status} ,
+        	#{title} ,
+        	#{subtitle} ,
+        	#{summary} ,
+        	#{categoryI} ,
+        	#{categoryIi} ,
+        	#{categoryIii} ,
+        	#{categoryIv} ,
+        	#{supplier} ,
+        	#{purchasePrice} ,
+        	#{sellingPrice} ,
+        	#{travelDays} ,
+        	#{traffic} ,
+        	#{satisfaction} ,
+        	#{evaluate} ,
+        	#{remark} ,
+        	#{mainPush} ,
+        	#{createDate} ,
+        	#{createName} ,
+        	#{updateDate} ,
+        	#{updateName} ,
+        	#{sysVersion} ,
+        	#{yn} 
+        )
+    ]]>
+		<!--	
+			oracle: order="BEFORE" SELECT sequenceName.nextval AS ID FROM DUAL 
+			DB2: order="BEFORE"" values nextval for sequenceName
+		<selectKey resultType="java.lang.Long" order="BEFORE" keyProperty="userId">
+			SELECT sequenceName.nextval AS ID FROM DUAL 
+        </selectKey>
+		-->
+	</insert>
+    
+	<update id="TourProduct.update" >
+    <![CDATA[
+        UPDATE tour_product SET
+	        status = #{status} ,
+	        title = #{title} ,
+	        subtitle = #{subtitle} ,
+	        summary = #{summary} ,
+	        category_i = #{categoryI} ,
+	        category_ii = #{categoryIi} ,
+	        category_iii = #{categoryIii} ,
+	        category_iv = #{categoryIv} ,
+	        supplier = #{supplier} ,
+	        purchase_price = #{purchasePrice} ,
+	        selling_price = #{sellingPrice} ,
+	        travel_days = #{travelDays} ,
+	        traffic = #{traffic} ,
+	        satisfaction = #{satisfaction} ,
+	        evaluate = #{evaluate} ,
+	        remark = #{remark} ,
+	        main_push = #{mainPush} ,
+	        create_date = #{createDate} ,
+	        create_name = #{createName} ,
+	        update_date = #{updateDate} ,
+	        update_name = #{updateName} ,
+	        sys_version = #{sysVersion} ,
+	        yn = #{yn} 
+        WHERE 
+	        id = #{id} 
+    ]]>
+	</update>
+
+    <delete id="TourProduct.delete">
+    <![CDATA[
+        DELETE FROM tour_product WHERE
+        id = #{id} 
+    ]]>
+    </delete>
+    
+    <select id="TourProduct.getById" resultMap="RM.TourProduct">
+		SELECT <include refid="TourProduct.columns" />
+	    <![CDATA[
+		    FROM tour_product 
+	        WHERE 
+		        id = #{id} 
+	    ]]>
+	</select>
+	
+	<sql id="TourProduct.findPage.where">
+		<!-- ognl访问静态方法的表达式 为@class@method(args),以下为调用rapid中的Ognl.isNotEmpty()方法,还有其它方法如isNotBlank()可以使用，具体请查看Ognl类 -->
+		<where>	      				
+	       <if test="@Ognl@isNotEmpty(id)">
+				AND id = #{id}
+			</if>
+	       <if test="@Ognl@isNotEmpty(status)">
+				AND status = #{status}
+			</if>
+	       <if test="@Ognl@isNotEmpty(title)">
+				AND title = #{title}
+			</if>
+	       <if test="@Ognl@isNotEmpty(subtitle)">
+				AND subtitle = #{subtitle}
+			</if>
+	       <if test="@Ognl@isNotEmpty(summary)">
+				AND summary = #{summary}
+			</if>
+	       <if test="@Ognl@isNotEmpty(categoryI)">
+				AND category_i = #{categoryI}
+			</if>
+	       <if test="@Ognl@isNotEmpty(categoryIi)">
+				AND category_ii = #{categoryIi}
+			</if>
+	       <if test="@Ognl@isNotEmpty(categoryIii)">
+				AND category_iii = #{categoryIii}
+			</if>
+	       <if test="@Ognl@isNotEmpty(categoryIv)">
+				AND category_iv = #{categoryIv}
+			</if>
+	       <if test="@Ognl@isNotEmpty(supplier)">
+				AND supplier = #{supplier}
+			</if>
+	       <if test="@Ognl@isNotEmpty(purchasePrice)">
+				AND purchase_price = #{purchasePrice}
+			</if>
+	       <if test="@Ognl@isNotEmpty(sellingPrice)">
+				AND selling_price = #{sellingPrice}
+			</if>
+	       <if test="@Ognl@isNotEmpty(travelDays)">
+				AND travel_days = #{travelDays}
+			</if>
+	       <if test="@Ognl@isNotEmpty(traffic)">
+				AND traffic = #{traffic}
+			</if>
+	       <if test="@Ognl@isNotEmpty(satisfaction)">
+				AND satisfaction = #{satisfaction}
+			</if>
+	       <if test="@Ognl@isNotEmpty(evaluate)">
+				AND evaluate = #{evaluate}
+			</if>
+	       <if test="@Ognl@isNotEmpty(remark)">
+				AND remark = #{remark}
+			</if>
+	       <if test="@Ognl@isNotEmpty(mainPush)">
+				AND main_push = #{mainPush}
+			</if>
+	       <if test="@Ognl@isNotEmpty(createDateBegin)">
+				AND create_date >= #{createDateBegin}
+		   </if>
+		   <if test="@Ognl@isNotEmpty(createDateEnd)">
+				AND create_date &lt;= #{createDateEnd}
+		   </if>
+	       <if test="@Ognl@isNotEmpty(createName)">
+				AND create_name = #{createName}
+			</if>
+	       <if test="@Ognl@isNotEmpty(updateDateBegin)">
+				AND update_date >= #{updateDateBegin}
+		   </if>
+		   <if test="@Ognl@isNotEmpty(updateDateEnd)">
+				AND update_date &lt;= #{updateDateEnd}
+		   </if>
+	       <if test="@Ognl@isNotEmpty(updateName)">
+				AND update_name = #{updateName}
+			</if>
+	       <if test="@Ognl@isNotEmpty(sysVersion)">
+				AND sys_version = #{sysVersion}
+			</if>
+	       <if test="@Ognl@isNotEmpty(yn)">
+				AND yn = #{yn}
+			</if>
+		</where>
+	</sql>
+		
+    <select id="TourProduct.findPage.count" resultType="long">
+        SELECT count(*) FROM tour_product 
+		<include refid="TourProduct.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 offset,pageSize,lastRows 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="TourProduct.findPage" resultMap="RM.TourProduct">
+    	SELECT <include refid="TourProduct.columns" />
+	    FROM tour_product 
+		<include refid="TourProduct.findPage.where"/>
+		
+		<if test="@Ognl@isNotEmpty(sortColumns)">
+			ORDER BY ${sortColumns}
+		</if>
+    </select>
+
+	
+</mapper>
+

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+
+<!-- 不使用namespace的话sql搜索定位会比较方便 -->
+<mapper namespace="TourHotel">
+
+	<resultMap id="RM.TourHotel" type="com.ljbd.tour.maldives.model.TourHotel">
+        <result property="id" column="id"/>
+        <result property="hotelName" column="hotel_name"/>
+        <result property="hotelGrade" column="hotel_grade"/>
+        <result property="room" column="room"/>
+        <result property="breakfast" column="breakfast"/>
+        <result property="bedType" column="bed_type"/>
+        <result property="bedTypeDesc" column="bed_type_desc"/>
+        <result property="broadband" column="broadband"/>
+        <result property="extraBed" column="extra_bed"/>
+        <result property="openedDate" column="opened_date"/>
+        <result property="decorateDate" column="decorate_date"/>
+        <result property="roomsNumber" column="rooms_number"/>
+        <result property="hotelPhone" column="hotel_phone"/>
+        <result property="hotelWebsite" column="hotel_website"/>
+        <result property="createDate" column="create_date"/>
+        <result property="createName" column="create_name"/>
+        <result property="updateDate" column="update_date"/>
+        <result property="updateName" column="update_name"/>
+        <result property="sysVersion" column="sys_version"/>
+        <result property="yn" column="yn"/>
+	</resultMap>
+	
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="TourHotel.columns">
+	    <![CDATA[
+		id,hotel_name,hotel_grade,room,breakfast,bed_type,bed_type_desc,broadband,extra_bed,opened_date,decorate_date,rooms_number,hotel_phone,hotel_website,create_date,create_name,update_date,update_name,sys_version,yn
+	    ]]>
+	</sql>
+
+	<!-- useGeneratedKeys="true" keyProperty="xxx" for sqlserver and mysql -->
+	<insert id="TourHotel.insert" useGeneratedKeys="true" keyProperty="id">
+    <![CDATA[
+        INSERT INTO tour_hotel (
+        	id ,
+        	hotel_name ,
+        	hotel_grade ,
+        	room ,
+        	breakfast ,
+        	bed_type ,
+        	bed_type_desc ,
+        	broadband ,
+        	extra_bed ,
+        	opened_date ,
+        	decorate_date ,
+        	rooms_number ,
+        	hotel_phone ,
+        	hotel_website ,
+        	create_date ,
+        	create_name ,
+        	update_date ,
+        	update_name ,
+        	sys_version ,
+        	yn 
+        ) VALUES (
+        	#{id} ,
+        	#{hotelName} ,
+        	#{hotelGrade} ,
+        	#{room} ,
+        	#{breakfast} ,
+        	#{bedType} ,
+        	#{bedTypeDesc} ,
+        	#{broadband} ,
+        	#{extraBed} ,
+        	#{openedDate} ,
+        	#{decorateDate} ,
+        	#{roomsNumber} ,
+        	#{hotelPhone} ,
+        	#{hotelWebsite} ,
+        	#{createDate} ,
+        	#{createName} ,
+        	#{updateDate} ,
+        	#{updateName} ,
+        	#{sysVersion} ,
+        	#{yn} 
+        )
+    ]]>
+		<!--	
+			oracle: order="BEFORE" SELECT sequenceName.nextval AS ID FROM DUAL 
+			DB2: order="BEFORE"" values nextval for sequenceName
+		<selectKey resultType="java.lang.Long" order="BEFORE" keyProperty="userId">
+			SELECT sequenceName.nextval AS ID FROM DUAL 
+        </selectKey>
+		-->
+	</insert>
+    
+	<update id="TourHotel.update" >
+    <![CDATA[
+        UPDATE tour_hotel SET
+	        hotel_name = #{hotelName} ,
+	        hotel_grade = #{hotelGrade} ,
+	        room = #{room} ,
+	        breakfast = #{breakfast} ,
+	        bed_type = #{bedType} ,
+	        bed_type_desc = #{bedTypeDesc} ,
+	        broadband = #{broadband} ,
+	        extra_bed = #{extraBed} ,
+	        opened_date = #{openedDate} ,
+	        decorate_date = #{decorateDate} ,
+	        rooms_number = #{roomsNumber} ,
+	        hotel_phone = #{hotelPhone} ,
+	        hotel_website = #{hotelWebsite} ,
+	        create_date = #{createDate} ,
+	        create_name = #{createName} ,
+	        update_date = #{updateDate} ,
+	        update_name = #{updateName} ,
+	        sys_version = #{sysVersion} ,
+	        yn = #{yn} 
+        WHERE 
+	        id = #{id} 
+    ]]>
+	</update>
+
+    <delete id="TourHotel.delete">
+    <![CDATA[
+        DELETE FROM tour_hotel WHERE
+        id = #{id} 
+    ]]>
+    </delete>
+    
+    <select id="TourHotel.getById" resultMap="RM.TourHotel">
+		SELECT <include refid="TourHotel.columns" />
+	    <![CDATA[
+		    FROM tour_hotel 
+	        WHERE 
+		        id = #{id} 
+	    ]]>
+	</select>
+	
+	<sql id="TourHotel.findPage.where">
+		<!-- ognl访问静态方法的表达式 为@class@method(args),以下为调用rapid中的Ognl.isNotEmpty()方法,还有其它方法如isNotBlank()可以使用，具体请查看Ognl类 -->
+		<where>	      				
+	       <if test="@Ognl@isNotEmpty(id)">
+				AND id = #{id}
+			</if>
+	       <if test="@Ognl@isNotEmpty(hotelName)">
+				AND hotel_name = #{hotelName}
+			</if>
+	       <if test="@Ognl@isNotEmpty(hotelGrade)">
+				AND hotel_grade = #{hotelGrade}
+			</if>
+	       <if test="@Ognl@isNotEmpty(room)">
+				AND room = #{room}
+			</if>
+	       <if test="@Ognl@isNotEmpty(breakfast)">
+				AND breakfast = #{breakfast}
+			</if>
+	       <if test="@Ognl@isNotEmpty(bedType)">
+				AND bed_type = #{bedType}
+			</if>
+	       <if test="@Ognl@isNotEmpty(bedTypeDesc)">
+				AND bed_type_desc = #{bedTypeDesc}
+			</if>
+	       <if test="@Ognl@isNotEmpty(broadband)">
+				AND broadband = #{broadband}
+			</if>
+	       <if test="@Ognl@isNotEmpty(extraBed)">
+				AND extra_bed = #{extraBed}
+			</if>
+	       <if test="@Ognl@isNotEmpty(openedDateBegin)">
+				AND opened_date >= #{openedDateBegin}
+		   </if>
+		   <if test="@Ognl@isNotEmpty(openedDateEnd)">
+				AND opened_date &lt;= #{openedDateEnd}
+		   </if>
+	       <if test="@Ognl@isNotEmpty(decorateDateBegin)">
+				AND decorate_date >= #{decorateDateBegin}
+		   </if>
+		   <if test="@Ognl@isNotEmpty(decorateDateEnd)">
+				AND decorate_date &lt;= #{decorateDateEnd}
+		   </if>
+	       <if test="@Ognl@isNotEmpty(roomsNumber)">
+				AND rooms_number = #{roomsNumber}
+			</if>
+	       <if test="@Ognl@isNotEmpty(hotelPhone)">
+				AND hotel_phone = #{hotelPhone}
+			</if>
+	       <if test="@Ognl@isNotEmpty(hotelWebsite)">
+				AND hotel_website = #{hotelWebsite}
+			</if>
+	       <if test="@Ognl@isNotEmpty(createDateBegin)">
+				AND create_date >= #{createDateBegin}
+		   </if>
+		   <if test="@Ognl@isNotEmpty(createDateEnd)">
+				AND create_date &lt;= #{createDateEnd}
+		   </if>
+	       <if test="@Ognl@isNotEmpty(createName)">
+				AND create_name = #{createName}
+			</if>
+	       <if test="@Ognl@isNotEmpty(updateDateBegin)">
+				AND update_date >= #{updateDateBegin}
+		   </if>
+		   <if test="@Ognl@isNotEmpty(updateDateEnd)">
+				AND update_date &lt;= #{updateDateEnd}
+		   </if>
+	       <if test="@Ognl@isNotEmpty(updateName)">
+				AND update_name = #{updateName}
+			</if>
+	       <if test="@Ognl@isNotEmpty(sysVersion)">
+				AND sys_version = #{sysVersion}
+			</if>
+	       <if test="@Ognl@isNotEmpty(yn)">
+				AND yn = #{yn}
+			</if>
+		</where>
+	</sql>
+		
+    <select id="TourHotel.findPage.count" resultType="long">
+        SELECT count(*) FROM tour_hotel 
+		<include refid="TourHotel.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 offset,pageSize,lastRows 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="TourHotel.findPage" resultMap="RM.TourHotel">
+    	SELECT <include refid="TourHotel.columns" />
+	    FROM tour_hotel 
+		<include refid="TourHotel.findPage.where"/>
+		
+		<if test="@Ognl@isNotEmpty(sortColumns)">
+			ORDER BY ${sortColumns}
+		</if>
+    </select>
+
+	
+</mapper>
+

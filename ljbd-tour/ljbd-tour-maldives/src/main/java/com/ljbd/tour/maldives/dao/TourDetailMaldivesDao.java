@@ -38,4 +38,5 @@ public interface TourDetailMaldivesDao extends EntityDao<TourDetailMaldives,java
 	public Page findPage(TourDetailMaldivesQuery query);
 
 
+
 }

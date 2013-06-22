@@ -2,7 +2,7 @@
 <!-- top start -->
 <div id="top">
     <!-- advbox start -->
-    <div class="advbox">
+    <!--  <div class="advbox">
         <div class="dt_small" style="display:none;">
             <div class="dt_toBig" style="display:none;"></div>
             <a href="http://www.jsfoot.com/" target="_blank"><img src="#springUrl('')/static/images/1325.jpg"
@@ -14,7 +14,7 @@
                                                                   src="#springUrl('')/static/images/sa11.jpg"
                                                                   width="990" height="500" alt="jquery广告图片大图"/></a>
         </div>
-    </div>
+    </div> -->
     <!-- advbox end -->
     <!-- logo start -->
     <div style="text-align:left;float:left;">
@@ -54,310 +54,17 @@
     <!-- image nav end -->
 </div>
 <!-- top end -->
-
 <!-- content start -->
 <div id="content">
-<!-- hot product start -->
-<div id="hotproduct" style="margin:0 0 10px 0;border: 1px solid #EDEDED;background:#FCFCFC;">
-    <div class="tit">
-        <h2>热门线路</h2>
-    </div>
-    <div class="clear"></div>
-    #if($!organizationKey && $organizationKey.result)
-        #foreach($!{item} in $organizationKey.result)
-            #if($loopCounter==0)
-                <div style="width:372px;float:left;">
-                    <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
-                        <img alt="大图" width="360" height="264" src="#springUrl('')/static/images/beiqing_1.jpg"/></a>
-                </div>
-
-                <div style="width:416px;float:right;text-align:left;padding:5px;">
-					<span>
-						<h1><a href="http://www.jsfoot.com/" target="_blank" title="$!{item.subtitle}">$!{item.title}</a></h1>
-						<div>热度&gt;&gt;:★★★★★</div>
-						<div>评分&gt;&gt;:★★★★★</div>
-						<div>酒店&gt;&gt;:$!{item.hotel_name}</div>
-						<div>酒店等级&gt;&gt;:五星</div>
-						<div>剩余房间&gt;&gt;:98个房间</div>
-						<div>位置&gt;&gt;:$!{item.hotel_location}</div>
-						<span>简介&gt;&gt;$!{item.summary}</span>
-					</span>
-                </div>
-            #end
-        #end
-        <div class="clear"></div>
-
-        <div class="subtit">
-            <h2><a href="#">其他热门线路</a></h2>
-        </div>
-
-        <div class="clear"></div>
-
-        <div>
-            <ul style="text-align:left;float:left;">
-                #if($!organizationKey && $organizationKey.result)
-                    #foreach($!{item} in $organizationKey.result)
-                        #if($loopCounter%2==1)
-                            <li>$!{item.title}</li>
-                        #end
-                    #end
-                #end
-            </ul>
-            <ul style="text-align:left;float:left;">
-                #if($!organizationKey && $organizationKey.result)
-                    #foreach($!{item} in $organizationKey.result)
-                        #if($loopCounter%2==0&&$loopCounter!=0)
-                            <li>$!{item.title}</li>
-                        #end
-                    #end
-                #end
-            </ul>
-        </div>
-    #end
-    <div class="clear"></div>
-
-</div>
-<!-- hot product end -->
-
-<!-- hot island start -->
-<div id="hotisland" style="margin:0 0 10px 0;border: 1px solid #EDEDED;background:#FCFCFC;">
-    <div class="tit">
-        <h2>热门岛屿</h2>
-    </div>
-    <div class="clear"></div>
-    <div style="width:416px;float:left;text-align:left;padding:5px;">
-					<span>
-						<h1><a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">美露丽芙岛</a></h1>
-						<div><a href="http://www.jsfoot.com/" target="_blank">热度&gt;&gt;</a>:★★★★★</div>
-						<div><a href="http://www.jsfoot.com/" target="_blank">评分&gt;&gt;</a>:★★★★★</div>
-						<div><a href="http://www.jsfoot.com/" target="_blank">酒店&gt;&gt;</a>:Vilu Reef Beach & Spa
-                            Resort
-                        </div>
-						<div><a href="http://www.jsfoot.com/" target="_blank">酒店等级&gt;&gt;</a>:五星</div>
-						<div><a href="http://www.jsfoot.com/" target="_blank">剩余房间&gt;&gt;</a>:98个房间</div>
-						<div><a href="http://www.jsfoot.com/" target="_blank">位置&gt;&gt;</a>:哈阿里夫环礁</div>
-						<span>简介： 东南亚风格的家居物品多用实木、竹、藤、麻等材料打造，比如印度尼西亚的藤、马来西亚河道里的水草以及泰国的木皮等等纯天然的材质。 这些材质会使居室显得自然古朴，彷佛沐浴着阳光雨露般舒畅。正所谓其崇尚自然、原汁、原味的特点， 被越来越多的人喜爱。</span>
-					</span>
-    </div>
-
-    <div style="width:372px;float:right;">
-        <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
-            <img alt="大图" width="360" height="264" src="#springUrl('')/static/images/beiqing_4.jpg"/></a>
-    </div>
-    <div class="clear"></div>
-
-    <div class="tit">
-        <h2>其他热门岛屿</h2>
-    </div>
-    <div class="clear"></div>
-    <div>
-        <div>
-            <div style="float:left;">
-                <img alt="大图" width="186" height="136" src="#springUrl('')/static/images/beiqing_4.jpg"/></a>
-            </div>
-            <div style="float:left;">
-                <img alt="大图" width="186" height="136" src="#springUrl('')/static/images/beiqing_4.jpg"/></a>
-            </div>
-            <div style="float:left;">
-                <img alt="大图" width="186" height="136" src="#springUrl('')/static/images/beiqing_4.jpg"/></a>
-            </div>
-            <div style="float:left;">
-                <img alt="大图" width="186" height="136" src="#springUrl('')/static/images/beiqing_4.jpg"/></a>
-            </div>
-        </div>
-    </div>
-    <div class="clear"></div>
-</div>
-<!-- hot island end -->
-
-<!-- full price start -->
-<div id="fullprice" style="margin:0 0 10px 0;border: 1px solid #EDEDED;background:#FCFCFC;">
-    <div class="tit">
-        <h2>一价全含</h2>
-    </div>
-    <div class="clear"></div>
-    <div>
-        <div style="border-bottom:1px solid #EDEDED;">
-            <div style="float:left;">
-                <img alt="大图" width="210" height="140" src="#springUrl('')/static/images/dao_1.jpg"/></a>
-            </div>
-            <div style="float:right;text-align:left;width:530px;">
-                <ul style="list-style-type:none;position:relative;margin-left:-40px;padding:0 10px 0 10px;">
-                    <li><span style="font-size:16px;color:#39aa42;font-weight:bold;">萨芙莉岛（Safari）</span></li>
-                    <li><span style="font-size:10px;">距离机场60公里，乘水上飞机约70分钟到达。2013年全新开业，细腻粉质沙滩，赠送半天船屋游。</span></li>
-                    <li style="border-top:1px solid #EDEDED;border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>
-                        海航直飞，4泻湖</span><span style="float:right;margin-right:10px;">12243起</span></li>
-                    <li style="border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>海航直飞，4泻湖</span><span
-                            style="float:right;margin-right:10px;">12243起</span></li>
-                    <li style="border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>海航直飞，4泻湖</span><span
-                            style="float:right;margin-right:10px;">12243起</span></li>
-                    <li style="border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>海航直飞，4泻湖</span><span
-                            style="float:right;margin-right:10px;">12243起</span></li>
-                </ul>
-            </div>
-            <div class="clear"></div>
-        </div>
-        <div style="border-bottom:1px solid #EDEDED;">
-            <div style="float:left;">
-                <img alt="大图" width="210" height="140" src="#springUrl('')/static/images/dao_1.jpg"/></a>
-            </div>
-            <div style="float:right;text-align:left;width:530px;">
-                <ul style="list-style-type:none;position:relative;margin-left:-40px;padding:0 10px 0 10px;">
-                    <li><span style="font-size:16px;color:#39aa42;font-weight:bold;">萨芙莉岛（Safari）</span></li>
-                    <li><span style="font-size:10px;">距离机场60公里，乘水上飞机约70分钟到达。2013年全新开业，细腻粉质沙滩，赠送半天船屋游。</span></li>
-                    <li style="border-top:1px solid #EDEDED;border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>
-                        海航直飞，4泻湖</span><span style="float:right;margin-right:10px;">12243起</span></li>
-                    <li style="border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>海航直飞，4泻湖</span><span
-                            style="float:right;margin-right:10px;">12243起</span></li>
-                    <li style="border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>海航直飞，4泻湖</span><span
-                            style="float:right;margin-right:10px;">12243起</span></li>
-                    <li style="border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>海航直飞，4泻湖</span><span
-                            style="float:right;margin-right:10px;">12243起</span></li>
-                </ul>
-            </div>
-            <div class="clear"></div>
-        </div>
-        <div style="border-bottom:1px solid #EDEDED;">
-            <div style="float:left;">
-                <img alt="大图" width="210" height="140" src="#springUrl('')/static/images/dao_1.jpg"/></a>
-            </div>
-            <div style="float:right;text-align:left;width:530px;">
-                <ul style="list-style-type:none;position:relative;margin-left:-40px;padding:0 10px 0 10px;">
-                    <li><span style="font-size:16px;color:#39aa42;font-weight:bold;">萨芙莉岛（Safari）</span></li>
-                    <li><span style="font-size:10px;">距离机场60公里，乘水上飞机约70分钟到达。2013年全新开业，细腻粉质沙滩，赠送半天船屋游。</span></li>
-                    <li style="border-top:1px solid #EDEDED;border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>
-                        海航直飞，4泻湖</span><span style="float:right;margin-right:10px;">12243起</span></li>
-                    <li style="border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>海航直飞，4泻湖</span><span
-                            style="float:right;margin-right:10px;">12243起</span></li>
-                    <li style="border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>海航直飞，4泻湖</span><span
-                            style="float:right;margin-right:10px;">12243起</span></li>
-                    <li style="border-bottom:1px solid #EDEDED;"><span><马尔代夫萨芙莉岛Safari4晚6日自助游>海航直飞，4泻湖</span><span
-                            style="float:right;margin-right:10px;">12243起</span></li>
-                </ul>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-    <div class="clear"></div>
-</div>
-<!-- full price end -->
-
-<!-- group product start -->
-<div id="groupproduct" style="margin:0 0 10px 0;border: 1px solid #EDEDED;background:#FCFCFC;">
-    <div class="tit">
-        <h2>马代“+”强版</h2>
-    </div>
-    <div class="clear"></div>
-    <div style="width:372px;float:left;padding:5px;">
-        <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
-            <img alt="大图" width="360" height="128" src="#springUrl('')/static/images/add1.jpg"/></a>
-        <h4>马尔代夫&nbsp;+&nbsp;香港</h4>
-        <span>1.性价比高 2.沙好水也好，环境更是美 3.可体验水飞 4.沙屋水屋兼备，特色半沙半水屋 5.特色船屋 6.特色玻璃桌面 7.新开业岛屿，设</span>
-    </div>
-    <div style="width:372px;float:right;padding:5px;">
-        <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
-            <img alt="大图" width="360" height="128" src="#springUrl('')/static/images/add2.jpg"/></a>
-        <h4>马尔代夫&nbsp;+&nbsp;迪拜</h4>
-        <span>1.性价比高 2.沙好水也好，环境更是美 3.可体验水飞 4.沙屋水屋兼备，特色半沙半水屋 5.特色船屋 6.特色玻璃桌面 7.新开业岛屿，设</span>
-    </div>
-    <div style="width:372px;float:right;padding:5px;">
-        <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
-            <img alt="大图" width="360" height="128" src="#springUrl('')/static/images/add2.jpg"/></a>
-        <h4>马尔代夫双岛游</h4>
-        <span>1.性价比高 2.沙好水也好，环境更是美 3.可体验水飞 4.沙屋水屋兼备，特色半沙半水屋 5.特色船屋 6.特色玻璃桌面 7.新开业岛屿，设</span>
-    </div>
-    <div style="width:372px;float:left;padding:5px;">
-        <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
-            <img alt="大图" width="360" height="128" src="#springUrl('')/static/images/add1.jpg"/></a>
-        <h4>马尔代夫7晚8天超长版</h4>
-        <span>1.性价比高 2.沙好水也好，环境更是美 3.可体验水飞 4.沙屋水屋兼备，特色半沙半水屋 5.特色船屋 6.特色玻璃桌面 7.新开业岛屿，设</span>
-    </div>
-    <div class="clear"></div>
-</div>
-<!-- group product end -->
-
-<!-- hot recommend start -->
-<!--
-<div id="recommend" style="margin:0 0 10px 0;border: 1px solid #EDEDED;background:#FCFCFC;">
-    <div class="tit">
-        <h2>推荐板块</h2>
-    </div>
-    <div class="clear"></div>
-    <div style="width:372px;float:left;padding:5px;">
-        <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
-        <img alt="大图" width="360" height="270" src="images/001.jpg" /></a>
-        <span>澳洲旅游</span>
-    </div>
-    <div style="width:372px;float:right;padding:5px;">
-        <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
-        <img alt="大图" width="360" height="270" src="images/002.jpg" /></a>
-        <span>海岛旅游</span>
-    </div>
-    <div style="width:372px;float:left;padding:5px;">
-        <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
-        <img alt="大图" width="360" height="270" src="images/003.jpg" /></a>
-        <span>海南旅游</span>
-    </div>
-    <div style="width:372px;float:right;padding:5px;">
-        <a href="http://www.jsfoot.com/" target="_blank" title="东南亚民族风的家 品味跨时空异域情怀">
-        <img alt="大图" width="360" height="270" src="images/004.jpg" /></a>
-        <span>游轮旅游</span>
-    </div>
-    <div class="clear"></div>
-</div>
--->
-<!-- hot recommend end -->
-
-<!-- brand start -->
-<div id="brand" style="margin:0 0 10px 0;border: 1px solid #EDEDED;background:#FCFCFC;">
-    <div class="tit">
-        <h2>酒店集团logo列表</h2>
-    </div>
-    <div class="clear"></div>
-    <div class="allbrand">
-        <div class="brand">
-            <a target="_blank" href="http://www.jsfoot.com/"><img alt="兰芝"
-                                                                  src="#springUrl('')/static/images/20121119104931.jpg"/></a>
-            <a target="_blank" href="http://www.jsfoot.com/"><img alt="丝塔芙"
-                                                                  src="#springUrl('')/static/images/20121015052055.jpg"/></a>
-            <a target="_blank" href="http://www.jsfoot.com/"><img alt="玉兰油"
-                                                                  src="#springUrl('')/static/images/20121123030707.jpg"/></a>
-            <a target="_blank" href="http://www.jsfoot.com/"><img alt="高丝"
-                                                                  src="#springUrl('')/static/images/20121210102224.jpg"/></a>
-            <a target="_blank" href="http://www.jsfoot.com/"><img alt="美宝莲"
-                                                                  src="#springUrl('')/static/images/20121220100203.jpg"/></a>
-            <a target="_blank" href="http://www.jsfoot.com/"><img alt="水之密语"
-                                                                  src="#springUrl('')/static/images/20130106112242.jpg"/></a>
-            <a target="_blank" href="http://www.jsfoot.com/"><img alt="曼秀雷敦"
-                                                                  src="#springUrl('')/static/images/20121220100514.jpg"/></a>
-            <a target="_blank" href="http://www.jsfoot.com/"><img alt="JUST BB"
-                                                                  src="#springUrl('')/static/images/20130106112655.jpg"/></a>
-            <a target="_blank" href="http://www.jsfoot.com/"><img alt="玉兰油"
-                                                                  src="#springUrl('')/static/images/20121123030707.jpg"/></a>
-            <a target="_blank" href="http://www.jsfoot.com/"><img alt="美宝莲"
-                                                                  src="#springUrl('')/static/images/20121220100203.jpg"/></a>
-            <a target="_blank" href="http://www.jsfoot.com/"><img alt="水之密语"
-                                                                  src="#springUrl('')/static/images/20130106112242.jpg"/></a>
-            <a target="_blank" href="http://www.jsfoot.com/"><img alt="曼秀雷敦"
-                                                                  src="#springUrl('')/static/images/20121220100514.jpg"/></a>
-            <a target="_blank" href="http://www.jsfoot.com/"><img alt="JUST BB"
-                                                                  src="#springUrl('')/static/images/20130106112655.jpg"/></a>
-            <a target="_blank" href="http://www.jsfoot.com/"><img alt="玉兰油"
-                                                                  src="#springUrl('')/static/images/20121123030707.jpg"/></a>
-            <a target="_blank" href="http://www.jsfoot.com/"><img alt="曼秀雷敦"
-                                                                  src="#springUrl('')/static/images/20121220100514.jpg"/></a>
-            <a target="_blank" href="http://www.jsfoot.com/"><img alt="JUST BB"
-                                                                  src="#springUrl('')/static/images/20130106112655.jpg"/></a>
-            <a target="_blank" href="http://www.jsfoot.com/"><img alt="玉兰油"
-                                                                  src="#springUrl('')/static/images/20121123030707.jpg"/></a>
-            <a target="_blank" href="http://www.jsfoot.com/"><img alt="玉兰油"
-                                                                  src="#springUrl('')/static/images/20121123030707.jpg"/></a>
-        </div>
-    </div>
-</div>
-<!-- brand end -->
+    #parse("master/maldives/maldives-master-i.vm")
+    #parse("master/maldives/maldives-hot-product.vm")
+    #parse("master/maldives/maldives-hot-island.vm")
+    #parse("master/maldives/maldives-full-price.vm")
+    #parse("master/maldives/maldives-group-product.vm")
+    #parse("master/maldives/maldives-brand.vm")
 </div>
 <!-- content end -->
+
 
 <!-- sidebar start -->
 <div id="sidebar">

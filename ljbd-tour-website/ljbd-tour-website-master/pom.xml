@@ -24,5 +24,10 @@
             <artifactId>ljbd-tour-maldives</artifactId>
             <version>1.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.ljbd.tour.common</groupId>
+            <artifactId>ljbd-tour-common</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 </project>

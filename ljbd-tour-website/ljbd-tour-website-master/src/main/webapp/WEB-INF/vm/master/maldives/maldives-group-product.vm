@@ -1,0 +1,31 @@
+<!-- group product start -->
+<div id="groupproduct" style="margin:0 0 10px 0;border: 1px solid #EDEDED;background:#FCFCFC;">
+    <div class="tit">
+        <h2>马代“+”强版</h2>
+    </div>
+
+    #if($!CF4M_IV)
+        <div class="clear"></div>
+        #foreach($!{item} in $CF4M_IV)
+            #if($loopCounter%2==1)
+                <div style="width:372px;float:left;padding:5px;">
+                    <a href="" target="_blank" title="$!{item.subtitle}">
+                        <img alt="大图" width="360" height="128" src="#springUrl('')/$!{item.photoPath}"/></a>
+                    <h4>$!{item.title}</h4>
+                    <span>$!{item.summary}</span>
+                </div>
+            #else
+                <div style="width:372px;float:right;padding:5px;">
+                    <a href="" target="_blank" title="$!{item.subtitle}">
+                        <img alt="大图" width="360" height="128" src="#springUrl('')/$!{item.photoPath}"/></a>
+                    <h4>$!{item.title}</h4>
+                    <span>$!{item.summary}</span>
+                </div>
+            #end
+
+        #end
+        <div class="clear"></div>
+    #end
+
+</div>
+<!-- group product end -->

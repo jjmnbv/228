@@ -1,0 +1,60 @@
+<!-- hot product start -->
+<div id="hotproduct" style="margin:0 0 10px 0;border: 1px solid #EDEDED;background:#FCFCFC;">
+    <div class="tit">
+        <h2>热门线路</h2>
+    </div>
+    <div class="clear"></div>
+    #if($!CF4M_I)
+        #foreach($!{item} in $CF4M_I)
+                <div style="width:372px;float:left;">
+                    <a href="" target="_blank" title="$!{item.subtitle}">
+                        <img alt="大图" width="360" height="264" src="#springUrl('')/$!{item.photoPath}"/></a>
+                </div>
+
+                <div style="width:416px;float:right;text-align:left;padding:5px;">
+					<span>
+                        <h1><a href="" target="_blank"
+                               title="$!{item.subtitle}">$!{item.title}</a></h1>
+                        <p><span><strong>热度:</strong>★★★★★</span></p>
+                    <p><strong>酒店:</strong>$!{item.hotelName}&lt;&lt;五星&gt;&gt; (98个房间)</p>
+                    <p><strong>位置:</strong>$!{item.hotelLocation}</p>
+                    <p><span><strong>简介:</strong>$!{item.summary}</span></p>
+					</span>
+                </div>
+        #end
+    #end
+        <div class="clear"></div>
+
+        <div class="subtit">
+            <h2><a href="#">其它热门线路</a></h2>
+        </div>
+
+        <div class="clear"></div>
+
+        <div>
+            <ul style="text-align:left;float:left;width:342px">
+                #if($!CF4M_I_I)
+                    #foreach($!{item} in $CF4M_I_I)
+                        #if($loopCounter%2==1)
+                            <li>$!{item.title}</li>
+                        #end
+                    #end
+                #end
+            </ul>
+            <ul style="text-align:left;float:left;">
+                #if($!CF4M_I_I)
+                    #foreach($!{item} in $CF4M_I_I)
+                        #if($loopCounter%2==0)
+                            <li>$!{item.title}</li>
+                        #end
+                    #end
+                #end
+            </ul>
+        </div>
+
+    <div class="clear"></div>
+
+</div>
+<!-- hot product end -->
+
+

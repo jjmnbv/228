@@ -1,0 +1,50 @@
+
+
+<!-- brand start -->
+<div id="brand" style="margin:0 0 10px 0;border: 1px solid #EDEDED;background:#FCFCFC;">
+    <div class="tit">
+        <h2>酒店集团logo列表</h2>
+    </div>
+    <div class="clear"></div>
+    <div class="allbrand">
+        <div class="brand">
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="兰芝"
+                                                                  src="#springUrl('')/static/images/20121119104931.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="丝塔芙"
+                                                                  src="#springUrl('')/static/images/20121015052055.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="玉兰油"
+                                                                  src="#springUrl('')/static/images/20121123030707.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="高丝"
+                                                                  src="#springUrl('')/static/images/20121210102224.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="美宝莲"
+                                                                  src="#springUrl('')/static/images/20121220100203.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="水之密语"
+                                                                  src="#springUrl('')/static/images/20130106112242.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="曼秀雷敦"
+                                                                  src="#springUrl('')/static/images/20121220100514.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="JUST BB"
+                                                                  src="#springUrl('')/static/images/20130106112655.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="玉兰油"
+                                                                  src="#springUrl('')/static/images/20121123030707.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="美宝莲"
+                                                                  src="#springUrl('')/static/images/20121220100203.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="水之密语"
+                                                                  src="#springUrl('')/static/images/20130106112242.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="曼秀雷敦"
+                                                                  src="#springUrl('')/static/images/20121220100514.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="JUST BB"
+                                                                  src="#springUrl('')/static/images/20130106112655.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="玉兰油"
+                                                                  src="#springUrl('')/static/images/20121123030707.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="曼秀雷敦"
+                                                                  src="#springUrl('')/static/images/20121220100514.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="JUST BB"
+                                                                  src="#springUrl('')/static/images/20130106112655.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="玉兰油"
+                                                                  src="#springUrl('')/static/images/20121123030707.jpg"/></a>
+            <a target="_blank" href="http://www.jsfoot.com/"><img alt="玉兰油"
+                                                                  src="#springUrl('')/static/images/20121123030707.jpg"/></a>
+        </div>
+    </div>
+</div>
+<!-- brand end -->

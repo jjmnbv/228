@@ -22,6 +22,10 @@
         <property name="dataSource" ref="afsDataSource"/>
     </bean>
 
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory"/>
+    </bean>
+
 
     <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
         <property name="beanNames">

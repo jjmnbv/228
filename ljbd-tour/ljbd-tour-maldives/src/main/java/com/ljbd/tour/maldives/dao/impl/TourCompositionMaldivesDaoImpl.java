@@ -8,31 +8,34 @@ import com.ljbd.tour.maldives.dao.TourCompositionMaldivesDao;
 import cn.org.rapid_framework.page.Page;
 import com.ljbd.tour.maldives.model.query.TourCompositionMaldivesQuery;
 
+import java.util.List;
+
 @Repository
-public class TourCompositionMaldivesDaoImpl extends BaseIbatis3Dao<TourCompositionMaldives,java.lang.Integer> implements TourCompositionMaldivesDao{
+public class TourCompositionMaldivesDaoImpl extends BaseIbatis3Dao<TourCompositionMaldives, java.lang.Integer> implements TourCompositionMaldivesDao {
 
-  @Override
-  public String getIbatisMapperNamesapce() {
-     return "TourCompositionMaldives";
-  }
-
-  public int saveOrUpdate(TourCompositionMaldives entity) {
-     int count = 0 ;
-
-    if(entity.getId() == null) {
-       count = save(entity);
+    @Override
+    public String getIbatisMapperNamesapce() {
+        return "TourCompositionMaldives";
     }
-    else {
-       count = update(entity);
+
+    public int saveOrUpdate(TourCompositionMaldives entity) {
+        int count = 0;
+
+        if (entity.getId() == null) {
+            count = save(entity);
+        } else {
+            count = update(entity);
+        }
+        return count;
     }
-       return count ;
-  }
 
-  public Page findPage(TourCompositionMaldivesQuery query) {
-      return pageQuery("TourCompositionMaldives.findPage",query);
-  }
+    public Page findPage(TourCompositionMaldivesQuery query) {
+        return pageQuery("TourCompositionMaldives.findPage", query);
+    }
+
+    public List findAll() {
+        return this.getSqlSession().selectList("TourCompositionMaldives.selectAll");
+    }
 
 
-
-	
 }

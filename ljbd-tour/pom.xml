@@ -16,6 +16,7 @@
 
     <modules>
         <module>ljbd-tour-maldives</module>
+        <module>ljbd-tour-common</module>
     </modules>
 
 </project>

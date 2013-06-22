@@ -1,0 +1,46 @@
+<!-- hot island start -->
+<div id="hotisland" style="margin:0 0 10px 0;border: 1px solid #EDEDED;background:#FCFCFC;">
+    <div class="tit">
+        <h2>热门岛屿</h2>
+    </div>
+    <div class="clear"></div>
+    #if($!CF4M_II)
+        #foreach($!{item} in $CF4M_II)
+            <div style="width:416px;float:left;text-align:left;padding:5px;">
+					<span>
+						<h1><a href="" target="_blank" title="$!{item.subtitle}">$!{item.title}</a></h1>
+                        <p><span><strong>评分:</strong>★★★★★</span></p>
+                        <p><strong>位置:</strong>$!{item.hotelLocation}</p>
+                        <p><strong>酒店:</strong>$!{item.hotelName}&lt;&lt;五星&gt;&gt; (98个房间)</p>
+                        <p><span><strong>简介:</strong>$!{item.summary}</span></p>
+					</span>
+            </div>
+
+            <div style="width:372px;float:right;">
+                <a href="" target="_blank" title="$!{item.subtitle}">
+                    <img alt="大图" width="360" height="264" src="#springUrl('')/$!{item.photoPath}"/></a>
+            </div>
+        #end
+    #end
+    <div class="clear"></div>
+
+    <div class="subtit">
+        <h2><a href="#">其它热门岛屿</a></h2>
+    </div>
+    <div class="clear"></div>
+    <div>
+        <div>
+            #if($!CF4M_II_I)
+                #foreach($!{item} in $CF4M_II_I)
+                <div style="float:left;">
+                    <img alt="大图" width="186" height="136" src="#springUrl('')/$!{item.photoPath}"/></a>
+                </div>
+                #end
+            #end
+
+
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!-- hot island end -->

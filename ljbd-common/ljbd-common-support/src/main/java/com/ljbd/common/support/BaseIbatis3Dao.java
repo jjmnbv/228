@@ -12,6 +12,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.dao.support.DaoSupport;
 import org.springframework.util.Assert;
 
+import javax.annotation.Resource;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
@@ -27,6 +28,21 @@ public abstract class BaseIbatis3Dao<E,PK extends Serializable> extends DaoSuppo
 
     private SqlSessionFactory sqlSessionFactory;
     private SqlSessionTemplate sqlSessionTemplate;
+
+    /*
+     * 主库
+     * */
+    @Resource(name="sqlSession")
+    private SqlSession sqlSession;
+
+    public SqlSession getSqlSession() {
+        return sqlSession;
+    }
+
+    public void setSqlSession(SqlSession sqlSession) {
+        this.sqlSession = sqlSession;
+    }
+
 	protected void checkDaoConfig() throws IllegalArgumentException {
 		Assert.notNull(sqlSessionFactory,"sqlSessionFactory must be not null");
 	}

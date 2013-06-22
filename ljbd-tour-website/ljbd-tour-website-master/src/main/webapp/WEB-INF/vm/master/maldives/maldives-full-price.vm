@@ -1,0 +1,84 @@
+<!-- full price start -->
+<div id="fullprice" style="margin:0 0 10px 0;border: 1px solid #EDEDED;background:#FCFCFC;">
+    <div class="tit">
+        <h2>一价全含</h2>
+    </div>
+    <div class="clear"></div>
+    <div>
+
+        #if($!CF4M_III_I)
+            #foreach($!{item} in $CF4M_III_I)
+        <div style="border-bottom:1px solid #EDEDED;">
+            <div style="float:left;">
+                <img alt="大图" width="210" height="140" src="#springUrl('')/$!{item.photoPath}"/></a>
+            </div>
+            <div style="float:right;text-align:left;width:530px;">
+                <ul style="list-style-type:none;position:relative;margin-left:-40px;padding:0 10px 0 10px;">
+                    <li><span style="font-size:16px;color:#39aa42;font-weight:bold;">$!{item.hotelName}</span></li>
+                    <li><span style="font-size:10px;">$!{item.hotelLocation}</span>
+                    </li>
+                    #if($!CF4M_III_I_I)
+                        #foreach($!{item} in $CF4M_III_I_I)
+                            <li style="border-top:1px solid #EDEDED;border-bottom:1px solid #EDEDED;">
+                                <span>$!{item.subtitle}</span><span
+                                    style="float:right;margin-right:10px;">$!{item.sellingPrice}起</span></li>
+                        #end
+                    #end
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+            #end
+        #end
+        #if($!CF4M_III_II)
+            #foreach($!{item} in $CF4M_III_II)
+                <div style="border-bottom:1px solid #EDEDED;">
+                    <div style="float:left;">
+                        <img alt="大图" width="210" height="140" src="#springUrl('')/$!{item.photoPath}"/></a>
+                    </div>
+                    <div style="float:right;text-align:left;width:530px;">
+                        <ul style="list-style-type:none;position:relative;margin-left:-40px;padding:0 10px 0 10px;">
+                            <li><span style="font-size:16px;color:#39aa42;font-weight:bold;">$!{item.hotelName}</span></li>
+                            <li><span style="font-size:10px;">$!{item.hotelLocation}</span>
+                            </li>
+                            #if($!CF4M_III_II_I)
+                                #foreach($!{item} in $CF4M_III_II_I)
+                                    <li style="border-top:1px solid #EDEDED;border-bottom:1px solid #EDEDED;">
+                                        <span>$!{item.subtitle}</span><span
+                                            style="float:right;margin-right:10px;">$!{item.sellingPrice}起</span></li>
+                                #end
+                            #end
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            #end
+        #end
+        #if($!CF4M_III_III)
+            #foreach($!{item} in $CF4M_III_III)
+                <div style="border-bottom:1px solid #EDEDED;">
+                    <div style="float:left;">
+                        <img alt="大图" width="210" height="140" src="#springUrl('')/$!{item.photoPath}"/></a>
+                    </div>
+                    <div style="float:right;text-align:left;width:530px;">
+                        <ul style="list-style-type:none;position:relative;margin-left:-40px;padding:0 10px 0 10px;">
+                            <li><span style="font-size:16px;color:#39aa42;font-weight:bold;">$!{item.hotelName}</span></li>
+                            <li><span style="font-size:10px;">$!{item.hotelLocation}</span>
+                            </li>
+                            #if($!CF4M_III_III_I)
+                                #foreach($!{item} in $CF4M_III_III_I)
+                                    <li style="border-top:1px solid #EDEDED;border-bottom:1px solid #EDEDED;">
+                                        <span>$!{item.subtitle}</span><span
+                                            style="float:right;margin-right:10px;">$!{item.sellingPrice}起</span></li>
+                                #end
+                            #end
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            #end
+        #end
+    </div>
+    <div class="clear"></div>
+</div>
+<!-- full price end -->
